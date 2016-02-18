@@ -1,0 +1,230 @@
+﻿<%@ Page Title="نظر دهی" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckPlan.aspx.cs" Inherits="filmnameh.Script.CheckPlan" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <section id="main">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="main-container _margin-bottom">
+                            <div class="content">
+                                <h2>مدیریت طرح</h2>
+                                <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
+                                    <p class="text-success"><%: SuccessMessage %></p>
+                                </asp:PlaceHolder>
+                                <div>
+                                    <section id="externalLoginsForm">
+                                        <% if (GetScript != null)
+                                           { %>
+                                        <dl class="dl-horizontal">
+                                            <dt>شناسه</dt>
+                                            <dd><%: GetScript["ScriptID"]%></dd>
+                                            <dt>عنوان</dt>
+                                            <dd><%: GetScript["Title"]%></dd>
+                                            <dt>نویسنده</dt>
+                                            <dd><%: GetScript["Author"]%></dd>
+                                            <dt>ارائه دهنده</dt>
+                                            <dd><%: GetScript["Provider"]%></dd>
+                                            <dt>زمان ایجاد</dt>
+                                            <dd><%: ConvertDate(GetScript["CreateDate"].ToString()) %></dd>
+                                            <dt>گونه</dt>
+                                            <dd><%: GetScript["Genre"]%></dd>
+                                            <dt>قالب</dt>
+                                            <dd><%: GetScript["Form"]%></dd>
+                                            <dt>موضوع</dt>
+                                            <dd><%: GetScript["Subject"]%> / <%: GetScript["Side1"]%> / <%: GetScript["Side2"]%></dd>
+                                            <dt>خلاصه</dt>
+                                            <dd><%: GetScript["Summary"]%></dd>
+                                            <dt>آخرین طرح</dt>
+                                            <dd><%: GetScript["Text"]%></dd>
+                                            <dt>پیوست ها</dt>
+                                            <dd><asp:ListView runat="server" id="upload_list" ItemType="System.String">
+                                                 <ItemTemplate>
+                                                     <li><a href="/upload/<%#Item.Split('_')[0] %>/<%#Item%>"><%#Item%></a></li>
+                                                 </ItemTemplate>
+                                            </asp:ListView></dd>
+                                        </dl>
+                                        <% }
+                                           else
+                                           { %>
+                                        <p class="text-success">صفحه ای بازگردانیده نشد</p>
+                                        <% } %>
+                                    </section>
+                                </div>
+                                <section id="loginForm">
+                                    <div class="form-horizontal">
+                                        <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
+                                            <p class="text-danger">
+                                                <asp:Literal runat="server" ID="FailureText" />
+                                            </p>
+                                        </asp:PlaceHolder>
+                                        <div class="form-group">
+                                            <asp:Label runat="server" AssociatedControlID="Score1" CssClass="col-xs-3 control-label">راهبردهای محتوایی</asp:Label>
+                                            <div class="col-xs-2">
+                                                <asp:DropDownList runat="server" ID="Score1" CssClass="form-control" ValidationGroup="g1">
+                                                    <asp:ListItem Text="--" Value="-1"></asp:ListItem>
+                                                    <asp:ListItem Text="1"></asp:ListItem>
+                                                    <asp:ListItem Text="2"></asp:ListItem>
+                                                    <asp:ListItem Text="3"></asp:ListItem>
+                                                    <asp:ListItem Text="4"></asp:ListItem>
+                                                    <asp:ListItem Text="5"></asp:ListItem>
+                                                    <asp:ListItem Text="6"></asp:ListItem>
+                                                    <asp:ListItem Text="7"></asp:ListItem>
+                                                    <asp:ListItem Text="8"></asp:ListItem>
+                                                    <asp:ListItem Text="9"></asp:ListItem>
+                                                    <asp:ListItem Text="10"></asp:ListItem>
+                                                    <asp:ListItem Text="11"></asp:ListItem>
+                                                    <asp:ListItem Text="12"></asp:ListItem>
+                                                    <asp:ListItem Text="13"></asp:ListItem>
+                                                    <asp:ListItem Text="14"></asp:ListItem>
+                                                    <asp:ListItem Text="15"></asp:ListItem>
+                                                    <asp:ListItem Text="16"></asp:ListItem>
+                                                    <asp:ListItem Text="17"></asp:ListItem>
+                                                    <asp:ListItem Text="18"></asp:ListItem>
+                                                    <asp:ListItem Text="19"></asp:ListItem>
+                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                    <asp:ListItem Text="21"></asp:ListItem>
+                                                    <asp:ListItem Text="22"></asp:ListItem>
+                                                    <asp:ListItem Text="23"></asp:ListItem>
+                                                    <asp:ListItem Text="24"></asp:ListItem>
+                                                    <asp:ListItem Text="25"></asp:ListItem>
+                                                    <asp:ListItem Text="26"></asp:ListItem>
+                                                    <asp:ListItem Text="27"></asp:ListItem>
+                                                    <asp:ListItem Text="28"></asp:ListItem>
+                                                    <asp:ListItem Text="29"></asp:ListItem>
+                                                    <asp:ListItem Text="30"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:RequiredFieldValidator InitialValue="-1" ID="Req_ID" Display="Dynamic"  ValidationGroup="g1" runat="server" ControlToValidate="Score1" Text="*" ErrorMessage="ErrorMessage">
+                                                </asp:RequiredFieldValidator>
+
+
+                                            </div>
+                                            <div class="_padding-top text-medium">آیا محتوای اصلی در دل ساختار داستانی به بار نشسته است؟</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label runat="server" AssociatedControlID="Score2" CssClass="col-xs-3 control-label">کنش یا خط داستانی</asp:Label>
+                                            <div class="col-xs-2">
+                                                <asp:DropDownList runat="server" ID="Score2" CssClass="form-control">
+                                                    <asp:ListItem Text="--" Value="-1"></asp:ListItem>
+                                                    <asp:ListItem Text="1"></asp:ListItem>
+                                                    <asp:ListItem Text="2"></asp:ListItem>
+                                                    <asp:ListItem Text="3"></asp:ListItem>
+                                                    <asp:ListItem Text="4"></asp:ListItem>
+                                                    <asp:ListItem Text="5"></asp:ListItem>
+                                                    <asp:ListItem Text="6"></asp:ListItem>
+                                                    <asp:ListItem Text="7"></asp:ListItem>
+                                                    <asp:ListItem Text="8"></asp:ListItem>
+                                                    <asp:ListItem Text="9"></asp:ListItem>
+                                                    <asp:ListItem Text="10"></asp:ListItem>
+                                                    <asp:ListItem Text="11"></asp:ListItem>
+                                                    <asp:ListItem Text="12"></asp:ListItem>
+                                                    <asp:ListItem Text="13"></asp:ListItem>
+                                                    <asp:ListItem Text="14"></asp:ListItem>
+                                                    <asp:ListItem Text="15"></asp:ListItem>
+                                                    <asp:ListItem Text="16"></asp:ListItem>
+                                                    <asp:ListItem Text="17"></asp:ListItem>
+                                                    <asp:ListItem Text="18"></asp:ListItem>
+                                                    <asp:ListItem Text="19"></asp:ListItem>
+                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                    <asp:ListItem Text="21"></asp:ListItem>
+                                                    <asp:ListItem Text="22"></asp:ListItem>
+                                                    <asp:ListItem Text="23"></asp:ListItem>
+                                                    <asp:ListItem Text="24"></asp:ListItem>
+                                                    <asp:ListItem Text="25"></asp:ListItem>
+                                                    <asp:ListItem Text="26"></asp:ListItem>
+                                                    <asp:ListItem Text="27"></asp:ListItem>
+                                                    <asp:ListItem Text="28"></asp:ListItem>
+                                                    <asp:ListItem Text="29"></asp:ListItem>
+                                                    <asp:ListItem Text="30"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Score2" CssClass="text-danger" ErrorMessage="پر کردن معیار دوم اجباری است" />
+                                            </div>
+                                            <div class="_padding-top text-medium">آیا می توان خطی سراسری که به اعتبار نیروهای درونی روایت، شروع را به میانه و سپس به پایان پیوند می دهد، تشخیص داد؟</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label runat="server" AssociatedControlID="Score3" CssClass="col-xs-3 control-label">پیوندهای علت و معلولی یا پیوندهای مبتنی بر احتمال و ضرورت</asp:Label>
+                                            <div class="col-xs-2">
+                                                <asp:DropDownList runat="server" ID="Score3" CssClass="form-control">
+                                                    <asp:ListItem Text="--" Value="-1"></asp:ListItem>
+                                                    <asp:ListItem Text="1"></asp:ListItem>
+                                                    <asp:ListItem Text="2"></asp:ListItem>
+                                                    <asp:ListItem Text="3"></asp:ListItem>
+                                                    <asp:ListItem Text="4"></asp:ListItem>
+                                                    <asp:ListItem Text="5"></asp:ListItem>
+                                                    <asp:ListItem Text="6"></asp:ListItem>
+                                                    <asp:ListItem Text="7"></asp:ListItem>
+                                                    <asp:ListItem Text="8"></asp:ListItem>
+                                                    <asp:ListItem Text="9"></asp:ListItem>
+                                                    <asp:ListItem Text="10"></asp:ListItem>
+                                                    <asp:ListItem Text="11"></asp:ListItem>
+                                                    <asp:ListItem Text="12"></asp:ListItem>
+                                                    <asp:ListItem Text="13"></asp:ListItem>
+                                                    <asp:ListItem Text="14"></asp:ListItem>
+                                                    <asp:ListItem Text="15"></asp:ListItem>
+                                                    <asp:ListItem Text="16"></asp:ListItem>
+                                                    <asp:ListItem Text="17"></asp:ListItem>
+                                                    <asp:ListItem Text="18"></asp:ListItem>
+                                                    <asp:ListItem Text="19"></asp:ListItem>
+                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Score3" CssClass="text-danger" ErrorMessage="پر کردن معیار سوم اجباری است" />
+                                            </div>
+                                            <div class="_padding-top text-medium">آیا دیالوگ ها پیش برنده داستان، متناسب با ویژگی های شخصیت و دارای بار دراماتیک هستند؟</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label runat="server" AssociatedControlID="Score4" CssClass="col-xs-3 control-label">شخصیت ها</asp:Label>
+                                            <div class="col-xs-2">
+                                                <asp:DropDownList runat="server" ID="Score4" CssClass="form-control">
+                                                    <asp:ListItem Text="--" Value="-1"></asp:ListItem>
+                                                    <asp:ListItem Text="1"></asp:ListItem>
+                                                    <asp:ListItem Text="2"></asp:ListItem>
+                                                    <asp:ListItem Text="3"></asp:ListItem>
+                                                    <asp:ListItem Text="4"></asp:ListItem>
+                                                    <asp:ListItem Text="5"></asp:ListItem>
+                                                    <asp:ListItem Text="6"></asp:ListItem>
+                                                    <asp:ListItem Text="7"></asp:ListItem>
+                                                    <asp:ListItem Text="8"></asp:ListItem>
+                                                    <asp:ListItem Text="9"></asp:ListItem>
+                                                    <asp:ListItem Text="10"></asp:ListItem>
+                                                    <asp:ListItem Text="11"></asp:ListItem>
+                                                    <asp:ListItem Text="12"></asp:ListItem>
+                                                    <asp:ListItem Text="13"></asp:ListItem>
+                                                    <asp:ListItem Text="14"></asp:ListItem>
+                                                    <asp:ListItem Text="15"></asp:ListItem>
+                                                    <asp:ListItem Text="16"></asp:ListItem>
+                                                    <asp:ListItem Text="17"></asp:ListItem>
+                                                    <asp:ListItem Text="18"></asp:ListItem>
+                                                    <asp:ListItem Text="19"></asp:ListItem>
+                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Score4" CssClass="text-danger" ErrorMessage="پر کردن معیار چهارم اجباری است" />
+                                            </div>
+                                            <div class="_padding-top text-medium">آیا تصویری اولیه و حسی از شخصیت های فرعی اثرگذار به دست می آید؟</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Label runat="server" AssociatedControlID="Opinion" CssClass="col-xs-2 control-label">مشروح نظر (حداقل 300 حرف)</asp:Label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox runat="server" ID="Opinion" CssClass="form-control" TextMode="MultiLine" Rows="5" />
+                                                <div class="col-md-1 pull-left">
+                                                    <asp:TextBox runat="server" ID="labelCo2" ReadOnly="true" Text="300"/>
+                                                </div>
+                                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Opinion" CssClass="text-danger" ErrorMessage="پر کردن نظر اجباری است" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <div class="text-center">
+                                                    <asp:Button runat="server" OnClick="RegisterClick" Text="ثبت" CssClass="btn btn-success" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</asp:Content>

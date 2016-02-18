@@ -1,0 +1,63 @@
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\filmnameh.dll.config
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\filmnameh.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\filmnameh.pdb
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Antlr3.Runtime.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\AspNet.ScriptManager.bootstrap.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\AspNet.ScriptManager.jQuery.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.ScriptManager.MSAjax.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.ScriptManager.WebForms.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.Web.Infrastructure.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Newtonsoft.Json.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\System.Web.Optimization.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\WebGrease.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\System.Web.Optimization.xml
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Antlr3.Runtime.pdb
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Newtonsoft.Json.xml
+G:\@Prog\vs_test\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.xml
+G:\@Prog\vs_test\filmnameh\filmnameh\obj\Debug\filmnameh.csprojResolveAssemblyReference.cache
+G:\@Prog\vs_test\filmnameh\filmnameh\obj\Debug\filmnameh.dll
+G:\@Prog\vs_test\filmnameh\filmnameh\obj\Debug\filmnameh.pdb
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\filmnameh.dll.config
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\filmnameh.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\filmnameh.pdb
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Antlr3.Runtime.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Newtonsoft.Json.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\System.Web.Optimization.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\WebGrease.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\System.Web.Optimization.xml
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Antlr3.Runtime.pdb
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Newtonsoft.Json.xml
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\obj\Debug\filmnameh.csprojResolveAssemblyReference.cache
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\obj\Debug\filmnameh.dll
+C:\Users\Farid Rn\Desktop\filmnameh\filmnameh\obj\Debug\filmnameh.pdb
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\filmnameh.dll.config
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\filmnameh.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\filmnameh.pdb
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Antlr3.Runtime.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Newtonsoft.Json.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\System.Web.Optimization.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\WebGrease.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\System.Web.Optimization.xml
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Antlr3.Runtime.pdb
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Newtonsoft.Json.xml
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\obj\Debug\filmnameh.dll
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\obj\Debug\filmnameh.pdb
+C:\Users\iFilm\Documents\Visual Studio 2013\Projects\filmnameh\filmnameh\obj\Debug\filmnameh.csprojResolveAssemblyReference.cache

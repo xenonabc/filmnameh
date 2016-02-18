@@ -44,76 +44,48 @@
                                             </asp:ListView></dd>
                                         </dl>
                                         <ul class="nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">تخصیص به کارشناسان</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">نظر نهایی</a></li>
                                         </ul>
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="home">...</div>
-                                            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                                            <div role="tabpanel" class="tab-pane active" id="home">
+                                                <div class="form-group">
+                                                    <asp:Label runat="server" AssociatedControlID="CheckerUsers" CssClass="col-md-4 control-label">تخصیص به کارشناسان</asp:Label>
+                                                    <div class="col-md-8 cht">
+                                                        <asp:CheckBoxList runat="server" ID="CheckerUsers" CssClass="form-control" >
+                                                        </asp:CheckBoxList>
+                                                        <asp:Button runat="server" OnClick="RegisterClick1" Text="ثبت" CssClass="btn btn-success pull-left" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="profile">
+                                                <div class="form-group">
+                                                    <asp:Label runat="server" AssociatedControlID="FinalOpinion" CssClass="col-md-4 control-label">توضیحات</asp:Label>
+                                                    <div class="col-md-8">
+                                                        <asp:TextBox runat="server" ID="FinalOpinion" CssClass="form-control" TextMode="MultiLine" Rows="4" />
+                                                        <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="FinalOpinion" CssClass="text-danger" ErrorMessage="پر کردن توضیحات اجباری است" />--%>
+                                                    </div>
+                                                    <asp:Label runat="server" AssociatedControlID="FinalState" CssClass="col-md-4 control-label">نظر نهایی</asp:Label>
+                                                    <div class="col-md-8">
+                                                        <asp:DropDownList runat="server" ID="FinalState" CssClass="form-control">
+                                                            <asp:ListItem Text="--"></asp:ListItem>
+                                                            <%--<asp:ListItem Text="بررسی مجدد"></asp:ListItem>
+                                                            <asp:ListItem Text="تصویب"></asp:ListItem>
+                                                            <asp:ListItem Text="مشروط"></asp:ListItem>
+                                                            <asp:ListItem Text="مسکوت"></asp:ListItem>--%>
+                                                            <asp:ListItem Text="مردود"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <asp:Button runat="server" OnClick="RegisterClick2" Text="ثبت" CssClass="btn btn-success pull-left" />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <section id="loginForm">
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <asp:Label runat="server" AssociatedControlID="CheckerUsers" CssClass="col-md-4 control-label">تخصیص به کارشناسان</asp:Label>
-                                                        <div class="col-md-8 cht">
-                                                            <asp:CheckBoxList runat="server" ID="CheckerUsers" CssClass="form-control" >
-                                                            </asp:CheckBoxList>
-                                                            <asp:Button runat="server" OnClick="RegisterClick1" Text="ثبت" CssClass="btn btn-success pull-left" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <asp:Label runat="server" AssociatedControlID="FinalOpinion" CssClass="col-md-4 control-label">توضیحات</asp:Label>
-                                                        <div class="col-md-8">
-                                                            <asp:TextBox runat="server" ID="FinalOpinion" CssClass="form-control" TextMode="MultiLine" Rows="4" />
-                                                            <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="FinalOpinion" CssClass="text-danger" ErrorMessage="پر کردن توضیحات اجباری است" />--%>
-                                                        </div>
-                                                        <asp:Label runat="server" AssociatedControlID="FinalState" CssClass="col-md-4 control-label">نظر نهایی</asp:Label>
-                                                        <div class="col-md-8">
-                                                            <asp:DropDownList runat="server" ID="FinalState" CssClass="form-control">
-                                                                <asp:ListItem Text="--"></asp:ListItem>
-                                                                <%--<asp:ListItem Text="بررسی مجدد"></asp:ListItem>
-                                                                <asp:ListItem Text="تصویب"></asp:ListItem>
-                                                                <asp:ListItem Text="مشروط"></asp:ListItem>
-                                                                <asp:ListItem Text="مسکوت"></asp:ListItem>--%>
-                                                                <asp:ListItem Text="مردود"></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <asp:Button runat="server" OnClick="RegisterClick2" Text="ثبت" CssClass="btn btn-success pull-left" />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <div class="col-md-6"></div>
+                                                <div class="col-md-6"></div>
                                             </div>
-                                        </section>
-
-                                        <%--<div class="form-group">
-                                            <asp:Label runat="server" AssociatedControlID="CheckerUsers" CssClass="col-md-2 control-label">تخصیص به کارشناسان</asp:Label>
-                                            <div class="col-md-4 cht">
-                                                <asp:CheckBoxList runat="server" ID="CheckerUsers" CssClass="form-control" >
-                                                </asp:CheckBoxList>
-                                            </div>
-                                        </div>
-                                        <section id="loginForm">
-                                            <div class="form-horizontal">
-                                                <h4></h4>
-                                                <hr />
-                                                <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
-                                                    <p class="text-danger">
-                                                        <asp:Literal runat="server" ID="FailureText" />
-                                                    </p>
-                                                </asp:PlaceHolder>
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <div class="text-center">
-                                                            <asp:Button runat="server" OnClick="RegisterClick1" Text="ثبت" CssClass="btn btn-success" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>--%>
-
-                                        <% } else { %>
+                                        </section><% } else { %>
                                         <p class="text-success">صفحه ای بازگردانیده نشد</p>    
                                         <% } %>
                                     </section>

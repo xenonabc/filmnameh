@@ -59,7 +59,12 @@
                                                     <td><%#: Item["Title"] %></td>
                                                     <td>
                                                         <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() == "0" %>'>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() != "0" %>'>
+                                                            <%# Item["FinalState"] %>
+                                                            </asp:PlaceHolder>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "0" %>'>
                                                             ارسال شده
+                                                            </asp:PlaceHolder>
                                                         </asp:PlaceHolder>
                                                         <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() != "0" %>'>
                                                             <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() != "0" %>'>
@@ -75,8 +80,10 @@
                                                         <a href="<%# "/Script/MyScript/" + Item["ScriptID"] %>">مشاهده</a>
                                                     </td>
                                                     <td>
-                                                        <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() == "0" %>'>
-                                                            <a href="<%# "/Script/Register/" + Item["ScriptID"] %>">ویرایش</a>
+                                                        <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "0" %>'>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() == "0" %>'>
+                                                                <a href="<%# "/Script/Register/" + Item["ScriptID"] %>">ویرایش</a>
+                                                            </asp:PlaceHolder>
                                                         </asp:PlaceHolder>
                                                     </td>
                                                 </tr>

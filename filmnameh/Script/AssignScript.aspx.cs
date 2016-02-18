@@ -67,7 +67,8 @@ namespace filmnameh.Script
                 upload_list.DataSource = upfiles.Split(';').Reverse().Skip(1).Reverse().ToArray();
                 upload_list.DataBind();
 
-                
+                FinalOpinion.Text = GetScript.First()["FinalOpinion"].ToString();
+                FinalState.Text = GetScript.First()["FinalState"].ToString();
             }
         }
         protected void RegisterClick1(object sender, EventArgs e)
@@ -109,9 +110,11 @@ namespace filmnameh.Script
             if (ScriptID != 0)
             {
 
-                var login = Share.DB.ExecuteCommand("SetAssignScript",
-                    new SqlParameter("CheckerID", ""),
-                    new SqlParameter("ScriptID", ScriptID));
+                var login = Share.DB.ExecuteCommand("SetFinalScript",
+                    new SqlParameter("FinalUserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
+                    new SqlParameter("ScriptID", ScriptID),
+                    new SqlParameter("FinalState", FinalState.SelectedItem.Text),
+                    new SqlParameter("FinalOpinion", FinalOpinion.Text));
                 Response.Redirect("~/Script/NewFInalScripts");
             }
         }

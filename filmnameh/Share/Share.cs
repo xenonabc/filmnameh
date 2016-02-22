@@ -36,7 +36,7 @@ namespace filmnameh.Share
                 }
                 catch (Exception ex)
                 {
-
+                    //throw;
                 }
                 finally
                 {

@@ -19,8 +19,8 @@ namespace filmnameh.Account
         {
             var login = Share.DB.ExecuteCommand("RegisterClick", 
                 new SqlParameter("UID", Email.Text), 
-                new SqlParameter("PWD", Password.Text), 
-                new SqlParameter("UserType", 10), 
+                new SqlParameter("PWD", Password.Text),
+                new SqlParameter("UserType", int.Parse("0")), 
                 new SqlParameter("UserAccess", string.Empty),
                 new SqlParameter("Name", Name.Text),
                 new SqlParameter("Surname", Surname.Text),
@@ -30,7 +30,7 @@ namespace filmnameh.Account
                 new SqlParameter("Address", Address.Text));
             if (login == null)
             {
-                ErrorMessage.Text = "An Error Has Occurred";
+                ErrorMessage.Text = "مشکلی پیش آمده است.";
             }
             else if (login.Count() > 0)
             {

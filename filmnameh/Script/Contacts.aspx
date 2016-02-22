@@ -36,7 +36,7 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td><%#: Item["ContactName"] %></td>
-                                                    <td><%#: Item["ContactEmail"] %></td>
+                                                    <td><a href = "mailto:<%#: Item["ContactEmail"] %>"><%#: Item["ContactEmail"] %></a></td>
                                                     <td><%#: Item["ContactSubject"] %></td>
                                                     <td><%#: ConvertDate(Item["ContactDate"].ToString()) %></td>
                                                     <td><%#: Item["ContactText"] %></td>

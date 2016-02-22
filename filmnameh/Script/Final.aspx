@@ -1,4 +1,4 @@
-﻿<%@ Page Title="مدیریت فیلم نامه ها" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FinalScripts.aspx.cs" Inherits="filmnameh.Script.FinalScripts" %>
+﻿<%@ Page Title="مدیریت فیلم نامه ها" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Final.aspx.cs" Inherits="filmnameh.Script.Final" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section id="main">

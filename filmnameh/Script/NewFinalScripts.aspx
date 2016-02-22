@@ -24,7 +24,8 @@
                                                         <tr>
                                                             <th class="col-xs-1">شناسه</th>
                                                             <th class="col-xs-2">تاریخ ثبت</th>
-                                                            <th class="col-xs-6">عنوان</th>
+                                                            <th class="col-xs-4">عنوان</th>
+                                                            <th class="col-xs-2">نوع</th>
                                                             <th class="col-xs-1">مشاهده</th>
                                                         </tr>
                                                     </thead>
@@ -38,6 +39,7 @@
                                                     <td><%#: Item["ScriptID"] %></td>
                                                     <td><%#: ConvertDate(Item["CreateDate"].ToString()) %></td>
                                                     <td><%#: Item["Title"] %></td>
+                                                    <td><%#: Item["ty"] %></td>
                                                     <td><a href="<%# "/Script/AssignScript/" + Item["ScriptID"] %>">مشاهده</a></td>
                                                 </tr>
                                             </ItemTemplate>

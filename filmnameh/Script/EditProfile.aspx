@@ -26,7 +26,7 @@
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="Passwd" CssClass="col-md-2 control-label">کلمه عبور</asp:Label>
                                         <div class="col-md-10">
-                                            <asp:TextBox runat="server" ID="Passwd" CssClass="form-control"/>
+                                            <asp:TextBox runat="server" ID="Passwd" CssClass="form-control" TextMode="Password"/>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Passwd" CssClass="text-danger" ErrorMessage="پرکردن کلمه عبور اجباری است" />
                                         </div>
                                     </div>

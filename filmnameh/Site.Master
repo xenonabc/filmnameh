@@ -32,13 +32,17 @@
                                         <div class="col-xs-7">
                                             <nav class="mainmenu">
                                                 <ul class="list-unstyled list-inline">
+                                                    <% if (LoggedinUser == null) { %>
                                                     <li><a runat="server" href="~/">خانه</a></li>
                                                     <li><a runat="server" href="~/About">درباره ما</a></li>
                                                     <li><a runat="server" href="~/Definitions">تعاریف</a></li>
-                                                     <% if (LoggedinUser == null) { %><li><a runat="server" href="~/Contact">تماس</a></li><% } %>
+                                                    <li><a runat="server" href="~/Contact">تماس</a></li>
+                                                    <% } %>
                                                     <% if (LoggedinUser != null) { %>
                                                     <% switch((int)LoggedinUser["UserType"]) { %>
                                                     <% case 0: %>
+                                                    <li><a runat="server" href="~/About">درباره ما</a></li>
+                                                    <li><a runat="server" href="~/Definitions">تعاریف</a></li>
                                                     <li><a runat="server" href="~/Contact">تماس</a></li>
                                                     <li><a runat="server" href="~/Script/MyScripts">پرونده من</a></li>
                                                     <% break; %>
@@ -48,9 +52,11 @@
                                                     <li><a runat="server" href="~/Script/CheckScripts">فیلمنامه‌ها</a></li>
                                                     <% break; %>
                                                     <% case 2: %>
-                                                    <li><a runat="server" href="~/Script/Contacts">تماس ها</a></li>
-                                                    <li><a runat="server" href="~/Script/FinalScripts">‌آماده رای</a></li>
                                                     <li><a runat="server" href="~/Script/NewFinalScripts">‌جدید</a></li>
+                                                    <li><a runat="server" href="~/Script/FinalScripts">‌آماده رای</a></li>
+                                                    <li><a runat="server" href="~/Script/Final">نهایی شده</a></li>
+                                                    <li><a runat="server" href="~/Script/Experts">‌کارشناسان</a></li>
+                                                    <li><a runat="server" href="~/Script/Contacts">تماس ها</a></li>
                                                     <li><a runat="server" href="~/Script/Users">‌کاربران</a></li>
                                                     <% break; %>
                                                     <% } %>

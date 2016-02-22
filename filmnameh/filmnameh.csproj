@@ -169,6 +169,7 @@
     <Content Include="Script\CheckSynap.aspx" />
     <Content Include="Script\CheckSynapsis.aspx" />
     <Content Include="Script\EditProfile.aspx" />
+    <Content Include="Script\Final.aspx" />
     <Content Include="Script\MyPlans.aspx" />
     <Content Include="Script\MySynapsis.aspx" />
     <Content Include="Script\RegisterP.aspx" />
@@ -176,6 +177,7 @@
     <Content Include="Script\RegisterUser.aspx" />
     <Content Include="Script\uploader.aspx" />
     <Content Include="Script\Contacts.aspx" />
+    <Content Include="Script\Experts.aspx" />
     <Content Include="Script\Users.aspx" />
     <Content Include="Script\ReAssignScript.aspx" />
     <Content Include="Script\AssignScript.aspx" />
@@ -390,6 +392,13 @@
     <Compile Include="Script\EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Script\Final.aspx.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Script\Final.aspx.designer.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Script\MyPlans.aspx.cs">
       <DependentUpon>MyPlans.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,6 +440,13 @@
     </Compile>
     <Compile Include="Script\Contacts.aspx.designer.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Script\Experts.aspx.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Script\Experts.aspx.designer.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Script\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>

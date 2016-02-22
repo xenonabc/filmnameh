@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace filmnameh.Script
 {
-    public partial class Users : System.Web.UI.Page
+    public partial class Experts : System.Web.UI.Page
     {
         protected string SuccessMessage
         {
@@ -28,12 +28,11 @@ namespace filmnameh.Script
             successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
 
             UsersList.DataSource = GetUsers();
-
             UsersList.DataBind();
         }
         public IEnumerable<Dictionary<string, object>> GetUsers()
         {
-            var myScripts = Share.DB.ExecuteCommand("GetUsers");
+            var myScripts = Share.DB.ExecuteCommand("GetExperts");
             return myScripts;
         }
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="مدیریت فیلم نامه ها" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FinalScripts.aspx.cs" Inherits="filmnameh.Script.FinalScripts" %>
+﻿<%@ Page Title="مدیریت کاربری کارشناسان" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Experts.aspx.cs" Inherits="filmnameh.Script.Experts" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section id="main">
@@ -8,25 +8,27 @@
                     <div class="col-xs-12">
                         <div class="main-container _margin-bottom">
                             <div class="content">
-                                <h2>مدیریت فیلم‌نامه‌ها</h2>
+                                <h2>مدیریت کارشناسان</h2>
                                 <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
                                     <p class="text-success"><%: SuccessMessage %></p>
                                 </asp:PlaceHolder>
                                 <div>
+                                    <div class="col-xs-5 pull-left">
+                                        <a href="/Script/RegisterUser" class="btn btn-info pull-left">ایجاد کاربر جدید</a>
+                                    </div>  
+                                    <div class="clearfix"></div>
                                     <section id="externalLoginsForm">
-                                        <asp:ListView runat="server" ID="MyscriptsList" ItemType="System.Collections.Generic.Dictionary`2[System.String,System.Object]">
+                                        <asp:ListView runat="server" ID="UsersList" ItemType="System.Collections.Generic.Dictionary`2[System.String,System.Object]">
                                             <LayoutTemplate>
-                                                <div class="page-header">
-                                                    <h4>فیلم‌نامه‌های آماده رای</h4>
-                                                </div>
+                                                <h4>لیست کاربران</h4>
                                                 <table class="table table-bordered table-hover table-striped">
                                                     <thead>
                                                         <tr>
                                                             <th class="col-xs-1">شناسه</th>
-                                                            <th class="col-xs-6">عنوان</th>
-                                                            <th class="col-xs-2">نوع</th>
-                                                            <th class="col-xs-1">مشاهده</th>
-                                                            <th class="col-xs-1">تغییر تخصیص ها</th>
+                                                            <th class="col-xs-2">نام</th>
+                                                            <th class="col-xs-2">نام خانوادگی</th>
+                                                            <th class="col-xs-1">فعال است</th>
+                                                            <th class="col-xs-2">ویرایش</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -36,11 +38,13 @@
                                             </LayoutTemplate>
                                             <ItemTemplate>
                                                 <tr>
-                                                    <td><%#: Item["ScriptID"] %></td>
-                                                    <td><%#: Item["Title"] %></td>
-                                                    <td><%#: Item["Type"] %></td>
-                                                    <td><a href="<%# "/Script/FinalScript/" + Item["ScriptID"] %>">مشاهده</a></td>
-                                                    <td><a href="<%# "/Script/ReAssignScript/" + Item["ScriptID"] %>">تغییر</a></td>
+                                                    <td><%#: Item["UserID"] %></td>
+                                                    <td><%#: Item["Name"] %></td>
+                                                    <td><%#: Item["Surname"] %></td>
+                                                    <td><%#: Item["ACT"] %></td>
+                                                    <td>
+                                                        <a href="<%# "/Script/RegisterUser/" + Item["UserID"] %>">ویرایش</a>
+                                                    </td>
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:ListView>

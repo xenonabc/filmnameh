@@ -78,7 +78,7 @@ namespace filmnameh.Script
                    new SqlParameter("CodeMelli", CodeMelli.Text),
                    new SqlParameter("Tel", Telephone.Text),
                    new SqlParameter("Address", Address.Text),
-                   new SqlParameter("History", Telephone.Text),
+                   new SqlParameter("History", History.Text),
                    new SqlParameter("Active", Active.SelectedItem.Value)); 
                 if (login == null)
                 {
@@ -86,7 +86,7 @@ namespace filmnameh.Script
                 }
                 else
                 {
-                    Response.Redirect("~/Script/Users");
+                    Response.Redirect("~/Script/Experts");
                 }
             }else{
                 var login = Share.DB.ExecuteCommand("UserAdd",
@@ -97,7 +97,7 @@ namespace filmnameh.Script
                    new SqlParameter("CodeMelli", CodeMelli.Text),
                    new SqlParameter("Tel", Telephone.Text),
                    new SqlParameter("Address", Address.Text),
-                   new SqlParameter("History", Telephone.Text),
+                   new SqlParameter("History", History.Text),
                    new SqlParameter("Active", Active.SelectedItem.Value));
                 if (login == null)
                 {
@@ -105,7 +105,7 @@ namespace filmnameh.Script
                 }
                 else
                 {
-                    Response.Redirect("~/Script/Users");
+                    Response.Redirect("~/Script/Experts");
                 }
             }
         }

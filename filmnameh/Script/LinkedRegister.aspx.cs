@@ -72,7 +72,7 @@ namespace filmnameh.Script
                 new SqlParameter("SuggestedEpisodeDur", int.Parse(SuggestedEpisodeDur.Text)));
             if (login == null)
             {
-                ErrorMessage.Text = "An Error Has Occurred";
+                ErrorMessage.Text = "خطایی رخ داده است";
             }
             else
             {

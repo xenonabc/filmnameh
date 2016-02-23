@@ -104,7 +104,7 @@ namespace filmnameh.Script
                    new SqlParameter("Attachments", txtFiles.Text)); 
                 if (login == null)
                 {
-                    ErrorMessage.Text = "An Error Has Occurred";
+                    ErrorMessage.Text = "خطایی رخ داده است";
                 }
                 else
                 {
@@ -143,7 +143,7 @@ namespace filmnameh.Script
 
                 if (login == null)
                 {
-                    ErrorMessage.Text = "An Error Has Occurred";
+                    ErrorMessage.Text = "خطایی رخ داده است";
                 }
                 else
                 {

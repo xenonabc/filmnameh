@@ -82,7 +82,7 @@ namespace filmnameh.Script
                    new SqlParameter("Active", Active.SelectedItem.Value)); 
                 if (login == null)
                 {
-                    ErrorMessage.Text = "An Error Has Occurred";
+                    ErrorMessage.Text = "خطایی رخ داده است";
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace filmnameh.Script
                    new SqlParameter("Active", Active.SelectedItem.Value));
                 if (login == null)
                 {
-                    ErrorMessage.Text = "An Error Has Occurred";
+                    ErrorMessage.Text = "خطایی رخ داده است";
                 }
                 else
                 {

@@ -27,7 +27,7 @@
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="ContactEmail" CssClass="col-md-2 control-label">ایمیل</asp:Label>
                                         <div class="col-md-10">
-                                            <asp:TextBox runat="server" ID="ContactEmail" CssClass="form-control"/>
+                                            <asp:TextBox runat="server" ID="ContactEmail" CssClass="form-control" TextMode="Email"/>
                                         </div>
                                     </div>
                                     <div class="form-group">

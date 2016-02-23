@@ -17,10 +17,10 @@
                                         <h4></h4>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">نام کاربری</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">ایمیل</asp:Label>
                                         <div class="col-md-10">
-                                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control"/>
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="text-danger" ErrorMessage="پرکردن نام کاربری اجباری است" />
+                                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" TextMode="Email"/>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="text-danger" ErrorMessage="پرکردن ایمیل اجباری است" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -47,7 +47,7 @@
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="CodeMelli" CssClass="col-md-2 control-label">کد ملی</asp:Label>
                                         <div class="col-md-10">
-                                            <asp:TextBox runat="server" ID="CodeMelli" CssClass="form-control ltr" MaxLength="10"/>
+                                            <asp:TextBox runat="server" ID="CodeMelli" CssClass="form-control ltr" MaxLength="10" TextMode="Phone"/>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="CodeMelli" CssClass="text-danger" Display="Dynamic" ErrorMessage="پرکردن کدملی اجباری است" />
                                         </div>
                                     </div>

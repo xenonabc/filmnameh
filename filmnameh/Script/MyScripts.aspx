@@ -24,7 +24,7 @@
                                 <div>
                                     <p> </p>
                                     <div class="col-xs-5 pull-left">
-                                        <div class="col-xs-5 pull-left">
+                                        <div class="col-xs-5 pull-left" style="display:none;">
                                             <a href="/Script/LinkedRegister" class="btn btn-info pull-left">ایجاد فیلم‌نامه‌ی مرتبط</a>
                                         </div>
                                         <div class="col-xs-5 pull-left">
@@ -83,6 +83,17 @@
                                                         <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "0" %>'>
                                                             <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() == "0" %>'>
                                                                 <a href="<%# "/Script/Register/" + Item["ScriptID"] %>">ویرایش</a>
+                                                            </asp:PlaceHolder>
+                                                        </asp:PlaceHolder>
+                                                        <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() != "0"  %>'>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "مشروط"  %>'>
+                                                                <a href="/Script/LinkedRegister" class="btn btn-info pull-left">ایجاد فیلم‌نامه‌ی مرتبط</a>
+                                                            </asp:PlaceHolder>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "مسکوت"  %>'>
+                                                                <a href="/Script/LinkedRegister" class="btn btn-info pull-left">ایجاد فیلم‌نامه‌ی مرتبط</a>
+                                                            </asp:PlaceHolder>
+                                                            <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "بررسی مجدد"  %>'>
+                                                                <a href="/Script/LinkedRegister" class="btn btn-info pull-left">ایجاد فیلم‌نامه‌ی مرتبط</a>
                                                             </asp:PlaceHolder>
                                                         </asp:PlaceHolder>
                                                     </td>

@@ -76,14 +76,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="ScriptSide1" CssClass="col-md-2 control-label">موضوع فرعی 1</asp:Label>
-                                        <div class="col-md-3">
+                                        <asp:Label runat="server" AssociatedControlID="ScriptSide1" CssClass="col-md-2 control-label">موضوعات فرعی</asp:Label>
+                                        <div class="col-md-10">
                                             <asp:TextBox runat="server" ID="ScriptSide1" CssClass="form-control" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="ScriptSide2" CssClass="col-md-2 control-label">موضوع فرعی 2</asp:Label>
-                                        <div class="col-md-3">
+                                        <asp:Label runat="server" AssociatedControlID="ScriptSide2" CssClass="col-md-2 control-label">پیام(در یک جمله)</asp:Label>
+                                        <div class="col-md-10">
                                             <asp:TextBox runat="server" ID="ScriptSide2" CssClass="form-control" />
                                         </div>
                                     </div>

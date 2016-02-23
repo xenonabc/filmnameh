@@ -55,7 +55,7 @@ namespace filmnameh.Script
                 new SqlParameter("History", History.Text)); 
             if (login == null)
             {
-                ErrorMessage.Text = "An Error Has Occurred";
+                ErrorMessage.Text = "خطایی رخ داده است";
             }
             else
             {

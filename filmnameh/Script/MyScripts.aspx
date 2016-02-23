@@ -24,7 +24,7 @@
                                 <div>
                                     <p> </p>
                                     <div class="col-xs-5 pull-left">
-                                        <div class="col-xs-5 pull-left" style="display:none;">
+                                        <div class="col-xs-5 pull-left">
                                             <a href="/Script/LinkedRegister" class="btn btn-info pull-left">ایجاد فیلم‌نامه‌ی مرتبط</a>
                                         </div>
                                         <div class="col-xs-5 pull-left">

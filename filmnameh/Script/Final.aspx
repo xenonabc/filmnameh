@@ -26,7 +26,6 @@
                                                             <th class="col-xs-6">عنوان</th>
                                                             <th class="col-xs-2">نوع</th>
                                                             <th class="col-xs-1">مشاهده</th>
-                                                            <th class="col-xs-1">تغییر تخصیص ها</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -39,8 +38,7 @@
                                                     <td><%#: Item["ScriptID"] %></td>
                                                     <td><%#: Item["Title"] %></td>
                                                     <td><%#: Item["Type"] %></td>
-                                                    <td><a href="<%# "/Script/FinalScript/" + Item["ScriptID"] %>">مشاهده</a></td>
-                                                    <td><a href="<%# "/Script/ReAssignScript/" + Item["ScriptID"] %>">تغییر</a></td>
+                                                    <td><a href="<%# "/Script/FinalScr/" + Item["ScriptID"] %>">مشاهده</a></td>
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:ListView>

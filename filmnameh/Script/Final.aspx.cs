@@ -32,7 +32,7 @@ namespace filmnameh.Script
         }
         public IEnumerable<Dictionary<string, object>> GetMyScripts()
         {
-            var checkScripts = Share.DB.ExecuteCommand("GetFinalScripts");
+            var checkScripts = Share.DB.ExecuteCommand("GetFinal");
             return checkScripts;
         }
     }

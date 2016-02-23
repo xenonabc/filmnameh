@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace filmnameh.Script
 {
-    public partial class FinalScript : System.Web.UI.Page
+    public partial class FinalScr : System.Web.UI.Page
     {
         public string ddd = "";
         protected string SuccessMessage
@@ -24,6 +24,11 @@ namespace filmnameh.Script
             private set;
         }
         protected IEnumerable<Dictionary<string, object>> GetScript
+        {
+            get;
+            private set;
+        }
+        protected IEnumerable<Dictionary<string, object>> GetScript2
         {
             get;
             private set;
@@ -47,43 +52,41 @@ namespace filmnameh.Script
                     new SqlParameter("ScriptID", ScriptID));
                 if (_script.Any())
                     GetScript = _script;
+                if (GetScript != null) {
+                    string upfiles = GetScript.First()["Attachments"].ToString();
+                    upload_list.DataSource = upfiles.Split(';').Reverse().Skip(1).Reverse().ToArray();
+                    upload_list.DataBind();
 
-                string upfiles = GetScript.First()["Attachments"].ToString();
-                upload_list.DataSource = upfiles.Split(';').Reverse().Skip(1).Reverse().ToArray();
-                upload_list.DataBind();
-
-                MyscriptsList.DataSource = GetScript;
-                MyscriptsList.DataBind();
-
-                if (!Page.IsPostBack)
-                {
+                    MyscriptsList.DataSource = GetScript;
+                    MyscriptsList.DataBind();
 
                     FinalOpinion.Text = GetScript.First()["FinalOpinion"].ToString();
                     FinalState.Text = GetScript.First()["FinalState"].ToString();
+
+                    string dd = GetScript.First()["Type"].ToString();
+                    if (dd == "1") ddd = "فیلم نامه";
+                    if (dd == "2") ddd = "طرح";
+                    if (dd == "3") ddd = "سیناپس";
+                }else{
+                    var __script = Share.DB.ExecuteCommand("GetScript",
+                    new SqlParameter("ScriptID", ScriptID));
+                    if (__script.Any())
+                        GetScript2 = __script;
+                    string upfiles = GetScript2.First()["Attachments"].ToString();
+                    upload_list.DataSource = upfiles.Split(';').Reverse().Skip(1).Reverse().ToArray();
+                    upload_list.DataBind();
+                    
+                    FinalOpinion2.Text = GetScript2.First()["FinalOpinion"].ToString();
+                    FinalState2.Text = GetScript2.First()["FinalState"].ToString();
+
+                    string dd = GetScript2.First()["Type"].ToString();
+                    if (dd == "1") ddd = "فیلم نامه";
+                    if (dd == "2") ddd = "طرح";
+                    if (dd == "3") ddd = "سیناپس";
                 }
                 
-                string dd = GetScript.First()["Type"].ToString();
-                if(dd == "1") ddd = "فیلم نامه";
-                if(dd == "2") ddd = "طرح";
-                if (dd == "3") ddd = "سیناپس";
+                
 
-            }
-        }
-        protected void RegisterClick(object sender, EventArgs e)
-        {
-            IList<string> seg = Request.GetFriendlyUrlSegments();
-            var ScriptDetailID = 0;
-            if (seg.Count == 1)
-                ScriptDetailID = int.Parse(seg[0]);
-            
-            if (ScriptDetailID != 0)
-            {
-                var login = Share.DB.ExecuteCommand("SetFinalScript",
-                    new SqlParameter("FinalUserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
-                    new SqlParameter("ScriptID", ScriptDetailID),
-                    new SqlParameter("FinalState", FinalState.SelectedItem.Text),
-                    new SqlParameter("FinalOpinion", FinalOpinion.Text));
-                Response.Redirect("~/Script/FInalScripts");
             }
         }
         protected string ConvertDate(string strGerDate)

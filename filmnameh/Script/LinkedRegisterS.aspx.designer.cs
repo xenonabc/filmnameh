@@ -10,7 +10,7 @@
 namespace filmnameh.Script {
     
     
-    public partial class LinkedRegister {
+    public partial class LinkedRegisterS {
         
         /// <summary>
         /// ErrorMessage control.

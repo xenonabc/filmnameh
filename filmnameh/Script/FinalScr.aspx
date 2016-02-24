@@ -44,6 +44,8 @@
                                                      <li><a href="/upload/<%#Item.Split('_')[0] %>/<%#Item%>"><%#Item%></a></li>
                                                  </ItemTemplate>
                                             </asp:ListView></dd>
+                                            <dt>مرتبط است به</dt>
+                                            <dd><%: GetScript.First()["ScriptGroup"]%></dd>
                                         </dl>
                                         <asp:ListView runat="server" ID="MyscriptsList" ItemType="System.Collections.Generic.Dictionary`2[System.String,System.Object]">
                                             <LayoutTemplate>

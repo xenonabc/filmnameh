@@ -171,6 +171,8 @@
     <Content Include="Script\EditProfile.aspx" />
     <Content Include="Script\Final.aspx" />
     <Content Include="Script\FinalScr.aspx" />
+    <Content Include="Script\LinkedRegisterP.aspx" />
+    <Content Include="Script\LinkedRegisterS.aspx" />
     <Content Include="Script\MyPlans.aspx" />
     <Content Include="Script\MySynapsis.aspx" />
     <Content Include="Script\RegisterP.aspx" />
@@ -406,6 +408,20 @@
     </Compile>
     <Compile Include="Script\FinalScr.aspx.designer.cs">
       <DependentUpon>FinalScr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Script\LinkedRegisterP.aspx.cs">
+      <DependentUpon>LinkedRegisterP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Script\LinkedRegisterP.aspx.designer.cs">
+      <DependentUpon>LinkedRegisterP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Script\LinkedRegisterS.aspx.cs">
+      <DependentUpon>LinkedRegisterS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Script\LinkedRegisterS.aspx.designer.cs">
+      <DependentUpon>LinkedRegisterS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Script\MyPlans.aspx.cs">
       <DependentUpon>MyPlans.aspx</DependentUpon>

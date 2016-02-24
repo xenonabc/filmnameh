@@ -42,6 +42,8 @@
                                                      <li><a href="/upload/<%#Item.Split('_')[0] %>/<%#Item%>"><%#Item%></a></li>
                                                  </ItemTemplate>
                                             </asp:ListView></dd>
+                                            <dt>مرتبط است به</dt>
+                                            <dd><%: GetScript.First()["ScriptGroup"]%></dd>
                                         </dl>
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">تخصیص به کارشناسان</a></li>
@@ -70,9 +72,9 @@
                                                         <asp:DropDownList runat="server" ID="FinalState" CssClass="form-control">
                                                             <asp:ListItem Text="--"></asp:ListItem>
                                                             <%--<asp:ListItem Text="بررسی مجدد"></asp:ListItem>
-                                                            <asp:ListItem Text="تصویب"></asp:ListItem>
                                                             <asp:ListItem Text="مشروط"></asp:ListItem>
                                                             <asp:ListItem Text="مسکوت"></asp:ListItem>--%>
+                                                            <asp:ListItem Text="تصویب"></asp:ListItem>
                                                             <asp:ListItem Text="مردود"></asp:ListItem>
                                                         </asp:DropDownList>
                                                         <asp:Button runat="server" OnClick="RegisterClick2" Text="ثبت" CssClass="btn btn-success pull-left" />

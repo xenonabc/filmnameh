@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="ScriptSide1" CssClass="col-md-2 control-label">موضوعات فرعی</asp:Label>
-                                        <div class="col-md-3">
+                                        <div class="col-md-10">
                                             <asp:TextBox runat="server" ID="ScriptSide1" CssClass="form-control" />
                                         </div>
                                     </div>

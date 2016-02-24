@@ -16,19 +16,31 @@
                                     <div class="page-header">
                                         <h4></h4>
                                     </div>
-                                    <div class="form-group">
+                                    <%--<div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="DropDownOldScripts" CssClass="col-md-2 control-label">فیلم نامه مرتبط</asp:Label>
                                         <div class="col-md-3">
                                             <asp:DropDownList runat="server" ID="DropDownOldScripts" CssClass="form-control">
                                             </asp:DropDownList>
                                             <asp:RequiredFieldValidator ID="rfv1" runat="server" ControlToValidate="DropDownOldScripts" InitialValue="Please select" CssClass="text-danger" ErrorMessage="انتخاب فیلم نامه مرتبط اجباری است" />
                                         </div>
-                                    </div>
+                                    </div>--%>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="ScriptTitle" CssClass="col-md-2 control-label">عنوان</asp:Label>
                                         <div class="col-md-10">
                                             <asp:TextBox runat="server" ID="ScriptTitle" CssClass="form-control"/>
                                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ScriptTitle" CssClass="text-danger" ErrorMessage="پرکردن عنوان اجباری است" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" AssociatedControlID="Author" CssClass="col-md-2 control-label">نویسنده</asp:Label>
+                                        <div class="col-md-10">
+                                            <asp:TextBox runat="server" ID="Author" CssClass="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" AssociatedControlID="Provider" CssClass="col-md-2 control-label">ارائه دهنده</asp:Label>
+                                        <div class="col-md-10">
+                                            <asp:TextBox runat="server" ID="Provider" CssClass="form-control"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -95,11 +107,43 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="ScriptText" CssClass="col-md-2 control-label">طرح</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="ScriptText" CssClass="col-md-2 control-label">فیلم نامه (300~600)</asp:Label>
                                         <div class="col-md-10">
-                                            <asp:TextBox runat="server" ID="ScriptText" CssClass="form-control" TextMode="MultiLine" Rows="15" />
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ScriptText" CssClass="text-danger" ErrorMessage="پرکردن طرح اجباری است" />
+                                            <asp:TextBox runat="server" ID="ScriptText" CssClass="form-control" TextMode="MultiLine" Rows="15" MaxLength="600"/>
+                                            <div class="col-md-1 pull-left hh">
+                                                <asp:TextBox runat="server" ID="labelCo" ReadOnly="true" Text="300~600"/>
+                                            </div>
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ScriptText" CssClass="text-danger" ErrorMessage="پرکردن فیلم نامه اجباری است" />
+                                            <asp:ListView runat="server" id="upload_list">
+                                                 <ItemTemplate>
+                                                     <li><%#Container.DataItem %><i class="icon-doc"></i></li>
+                                                 </ItemTemplate>
+                                            </asp:ListView>
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Label runat="server" AssociatedControlID="" CssClass="col-md-2 control-label">آپلود فیلم نامه</asp:Label>
+                                        <div id="divFileUploader" class="col-md-10">
+	                                        <div class="fup-uploader">
+		                                        <div class="fup-upload-drop-area" style="display: none;">
+			                                        <span>Drop files here to upload</span>
+		                                        </div>
+		                                        <div class="fup-upload-button">فایل را انتخاب کنید
+			                                        <input type="file" name="file">
+		                                        </div>
+		                                        
+	                                        </div>
+                                        </div>
+                                        <asp:TextBox runat="server" id='txtFiles' type='hidden' />
+                                        <input id='txtFailed' type='hidden' />
+                                        <script type="text/javascript">
+                                            function createUploader() {
+                                                var uploader = new fup.FileUploader({
+                                                    element: document.getElementById('divFileUploader')
+                                                });
+                                            };
+                                            window.onload = createUploader;
+                                        </script>
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="SuggestedEpisodeNo" CssClass="col-md-2 control-label">تعداد پیشنهادی</asp:Label>

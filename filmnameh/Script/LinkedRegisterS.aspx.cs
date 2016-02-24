@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace filmnameh.Script
 {
-    public partial class LinkedRegister : System.Web.UI.Page
+    public partial class LinkedRegisterS : System.Web.UI.Page
     {
         public class linkedScr
         {
@@ -46,6 +46,7 @@ namespace filmnameh.Script
                 IList<string> seg = Request.GetFriendlyUrlSegments();
                 if (seg.Count == 1)
                     ScriptGroupID = int.Parse(seg[0]);
+
             //}
         }
 
@@ -66,7 +67,7 @@ namespace filmnameh.Script
                 newID = int.Parse(nyear + "00001");
             }
 
-            var login = Share.DB.ExecuteCommand("LinkedScriptRegisterClick",
+            var login = Share.DB.ExecuteCommand("LinkedScriptRegisterClickS",
                 new SqlParameter("CreateUserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
                 new SqlParameter("Title", ScriptTitle.Text),
                 new SqlParameter("Author", Author.Text),
@@ -83,14 +84,14 @@ namespace filmnameh.Script
                 new SqlParameter("SuggestedEpisodeDur", int.Parse(SuggestedEpisodeDur.Text)),
                 new SqlParameter("ID", newID.ToString()),
                 new SqlParameter("Attachments", txtFiles.Text),
-                new SqlParameter("Type", 1));
+                new SqlParameter("Type", 3));
             if (login == null)
             {
                 ErrorMessage.Text = "خطایی رخ داده است";
             }
             else
             {
-                Response.Redirect("~/Script/MyScripts");
+                Response.Redirect("~/Script/MySynapsis");
             }
         }
         protected string ConvertDate(string strGerDate)

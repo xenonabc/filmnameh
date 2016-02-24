@@ -1,4 +1,4 @@
-﻿<%@ Page Title="ایجاد فیلم‌نامه‌ی جدید" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterP.aspx.cs" Inherits="filmnameh.Script.RegisterP" %>
+﻿<%@ Page Title="ایجاد سیناپس مرتبط" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LinkedRegisterS.aspx.cs" Inherits="filmnameh.Script.LinkedRegisterS" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <section id="main">
@@ -12,11 +12,18 @@
                                 <p class="text-danger">
                                     <asp:Literal runat="server" ID="ErrorMessage" />
                                 </p>
-                                <div class="row">
-                                <div class="form-horizontal col-md-8">
+                                <div class="form-horizontal">
                                     <div class="page-header">
                                         <h4></h4>
                                     </div>
+                                    <%--<div class="form-group">
+                                        <asp:Label runat="server" AssociatedControlID="DropDownOldScripts" CssClass="col-md-2 control-label">فیلم نامه مرتبط</asp:Label>
+                                        <div class="col-md-3">
+                                            <asp:DropDownList runat="server" ID="DropDownOldScripts" CssClass="form-control">
+                                            </asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ControlToValidate="DropDownOldScripts" InitialValue="Please select" CssClass="text-danger" ErrorMessage="انتخاب فیلم نامه مرتبط اجباری است" />
+                                        </div>
+                                    </div>--%>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="ScriptTitle" CssClass="col-md-2 control-label">عنوان</asp:Label>
                                         <div class="col-md-10">
@@ -100,13 +107,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="ScriptText" CssClass="col-md-2 control-label">طرح (300~600)</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="ScriptText" CssClass="col-md-2 control-label">سیناپس (300~600)</asp:Label>
                                         <div class="col-md-10">
                                             <asp:TextBox runat="server" ID="ScriptText" CssClass="form-control" TextMode="MultiLine" Rows="15" MaxLength="600"/>
                                             <div class="col-md-1 pull-left hh">
                                                 <asp:TextBox runat="server" ID="labelCo" ReadOnly="true" Text="300~600"/>
                                             </div>
-                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ScriptText" CssClass="text-danger" ErrorMessage="پرکردن طرح اجباری است" />
+                                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ScriptText" CssClass="text-danger" ErrorMessage="پرکردن سیناپس اجباری است" />
                                             <asp:ListView runat="server" id="upload_list">
                                                  <ItemTemplate>
                                                      <li><%#Container.DataItem %><i class="icon-doc"></i></li>
@@ -115,7 +122,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="" CssClass="col-md-2 control-label">آپلود طرح</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="" CssClass="col-md-2 control-label">آپلود فایل سیناپس</asp:Label>
                                         <div id="divFileUploader" class="col-md-10">
 	                                        <div class="fup-uploader">
 		                                        <div class="fup-upload-drop-area" style="display: none;">
@@ -135,7 +142,7 @@
                                                     element: document.getElementById('divFileUploader')
                                                 });
                                             };
-                                            window.onload = createUploader;  
+                                            window.onload = createUploader;
                                         </script>
                                     </div>
                                     <div class="form-group">
@@ -145,7 +152,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <asp:Label runat="server" AssociatedControlID="SuggestedEpisodeDur" CssClass="col-md-2 control-label">زمان پیشنهادی هر قسمت</asp:Label>
+                                        <asp:Label runat="server" AssociatedControlID="SuggestedEpisodeDur" CssClass="col-md-2 control-label">زمان پیشنهادی</asp:Label>
                                         <div class="col-md-2">
                                             <asp:TextBox runat="server" ID="SuggestedEpisodeDur" CssClass="form-control" Text="0" TextMode="Number" />   
                                         </div>
@@ -153,27 +160,9 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="center-block text-center">
-                                            <asp:Button runat="server" OnClick="ScriptRegisterClick" Text="ذخیره" CssClass="btn btn-success" ID="RegisterButton"/>
+                                            <asp:Button runat="server" OnClick="ScriptRegisterClick" Text="ذخیره" CssClass="btn btn-success" />
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <section id="socialLoginForm">
-                                        <div id="socialLoginList">
-                                            <h4>راهنما</h4>
-                                            <hr />
-                                            <div>
-                                                <ol>
-                                                    <li>طرح : طرح  فیلم نامه  ،  چارچوب ساختاری ، خط سیر اصلی و خطوط فرعی موثر داستان را مشخص خواهد کرد و انتظار اصلی از آن این است که هدف اصلی (پیام یا پیش فرض یا ایده ی ناظر) در دل ساختار داستانی به بار نشسته باشد. طرح ، به فراخور نوع پروژه حجم متفاوتی خواهد داشت که در زیر به تفکیک آمده است.</li>
-                                                    <li>طرح هایی که مستقیما ( و نه از طریق مراکز تولیدی) به مرکز گسترش ارسال می شوند ، باید در قالب یک فایل صوتی ، چکیده ای خود را از طریق قسمت آپلود ارسال کنند. (نقل شفاهی (پیچینگ/ Pitching) شیوه¬ای متداول در تلویزیون¬های معتبر جهان است. یعنی بازگو کردن عصاره¬ی طرح (آغاز؛ میانه و انجام) ظرف چند دقیقه. سامانه¬ی جامع متون نمایشی نیز از این شیوه بهره می¬گیرد. به این معنا که افرادی که به شکل حقیقی (فارغ از مراکز پنج¬گانه¬ی تولید آثار نمایشی) و بدون مصوبه¬ی ایشان، متن¬های خود را مستقیماً برای مرکز گسترش فیلم¬نامه¬نویسی ارسال می¬کنند، موظفند در یک فایل صوتی، چکیده¬ی طرح خود را در 2 تا 5 دقیقه بازگو و پیوست کنند.)</li>
-                                                    <li>پیام (دریک جمله ) : پیام ، چکیده ی معنایی و ایده ی ناظر متن است که باید صرفا در یک جمله (مطابق با تعریف دستوری زبان) درج شود. بنابراین ، شبه جمله ، عبارات فاقد فعل و ادغام چند جمله ، فاقد وجاهت است. برای نمونه:
-احترام به والدین ، پیام جمله ای نیست و باید برای نمونه بشود ،احترام به والدین باعث گشایش کارها می شود.
-</li>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
                                 </div>
                             </div>
                         </div>

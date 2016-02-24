@@ -240,7 +240,7 @@ fup.FileUploaderBasic = function (o) {
     this._options = {
         // set to true to see the server response
         debug: false,
-        action: '../uploader',
+        action: '/Script/uploader',
         params: {},
         button: null,
         multiple: false,

@@ -43,6 +43,8 @@
                                                      <li><a href="/upload/<%#Item.Split('_')[0] %>/<%#Item%>"><%#Item%></a></li>
                                                  </ItemTemplate>
                                             </asp:ListView></dd>
+                                            <dt>مرتبط است به</dt>
+                                            <dd><%: GetScript["ScriptGroup"]%></dd>
                                         </dl>
                                         <% }
                                            else

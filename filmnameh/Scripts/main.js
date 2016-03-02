@@ -16,10 +16,10 @@
         var $label = $("#MainContent_labelCo");
         stringCounter($(this), $label, 600);
     });
-    $("#MainContent_Opinion").on('keyup', function (e) {
-        var $label = $("#MainContent_labelCo2");
-        stringCounter($(this), $label, 300);
-    });
+    //$("#MainContent_Opinion").on('keyup', function (e) {
+    //    var $label = $("#MainContent_labelCo2");
+    //    stringCounter($(this), $label, 300);
+    //});
 
 
     $(".icon-doc").on('click', function (e) {

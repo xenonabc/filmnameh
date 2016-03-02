@@ -62,10 +62,10 @@ namespace filmnameh.Script
                 var login = Share.DB.ExecuteCommand("SetCheckScriptP",
                     new SqlParameter("ScriptID", ScriptID),
                     new SqlParameter("CheckerUserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
-                    new SqlParameter("Score1", int.Parse(Score1.SelectedItem.Text)),
-                    new SqlParameter("Score2", int.Parse(Score2.Text)),
-                    new SqlParameter("Score3", int.Parse(Score3.Text)),
-                    new SqlParameter("Score4", int.Parse(Score4.Text)),
+                    new SqlParameter("Score1", Score1.SelectedItem.Text),
+                    new SqlParameter("Score2", Score2.Text),
+                    new SqlParameter("Score3", Score3.Text),
+                    new SqlParameter("Score4", Score4.Text),
                     new SqlParameter("Opinion", Opinion.Text));
                 if (login.Count() > 0)
                 {

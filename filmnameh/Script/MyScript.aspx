@@ -44,12 +44,19 @@
                                             </asp:ListView></dd>
                                             <dt>آخرین وضعیت</dt>
                                             <dd>
-                                                <asp:PlaceHolder runat="server" visible='<%# GetMyScript["FinalState"].ToString() != "0" %>'>
+                                                <%
+                                                    if (GetMyScript["FinalState"].ToString() != "0")
+                                                    {%>
+
                                                     <%: GetMyScript["FinalState"] %>
-                                                </asp:PlaceHolder>
-                                                <asp:PlaceHolder runat="server" visible='<%# GetMyScript["FinalState"].ToString() == "0" %>'>
+
+                                                    <% } 
+                                                    else 
+                                                    {
+                                                    %>
                                                     در حال بررسی
-                                                </asp:PlaceHolder>
+                                                    <% } %>
+
                                             </dd>
                                         </dl>
                                         <% } else { %>

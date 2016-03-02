@@ -69,36 +69,9 @@
                                             <div class="col-xs-2">
                                                 <asp:DropDownList runat="server" ID="Score1" CssClass="form-control" ValidationGroup="g1">
                                                     <asp:ListItem Text="--" Value="-1"></asp:ListItem>
-                                                    <asp:ListItem Text="1"></asp:ListItem>
-                                                    <asp:ListItem Text="2"></asp:ListItem>
-                                                    <asp:ListItem Text="3"></asp:ListItem>
-                                                    <asp:ListItem Text="4"></asp:ListItem>
-                                                    <asp:ListItem Text="5"></asp:ListItem>
-                                                    <asp:ListItem Text="6"></asp:ListItem>
-                                                    <asp:ListItem Text="7"></asp:ListItem>
-                                                    <asp:ListItem Text="8"></asp:ListItem>
-                                                    <asp:ListItem Text="9"></asp:ListItem>
-                                                    <asp:ListItem Text="10"></asp:ListItem>
-                                                    <asp:ListItem Text="11"></asp:ListItem>
-                                                    <asp:ListItem Text="12"></asp:ListItem>
-                                                    <asp:ListItem Text="13"></asp:ListItem>
-                                                    <asp:ListItem Text="14"></asp:ListItem>
-                                                    <asp:ListItem Text="15"></asp:ListItem>
-                                                    <asp:ListItem Text="16"></asp:ListItem>
-                                                    <asp:ListItem Text="17"></asp:ListItem>
-                                                    <asp:ListItem Text="18"></asp:ListItem>
-                                                    <asp:ListItem Text="19"></asp:ListItem>
-                                                    <asp:ListItem Text="20"></asp:ListItem>
-                                                    <asp:ListItem Text="21"></asp:ListItem>
-                                                    <asp:ListItem Text="22"></asp:ListItem>
-                                                    <asp:ListItem Text="23"></asp:ListItem>
-                                                    <asp:ListItem Text="24"></asp:ListItem>
-                                                    <asp:ListItem Text="25"></asp:ListItem>
-                                                    <asp:ListItem Text="26"></asp:ListItem>
-                                                    <asp:ListItem Text="27"></asp:ListItem>
-                                                    <asp:ListItem Text="28"></asp:ListItem>
-                                                    <asp:ListItem Text="29"></asp:ListItem>
-                                                    <asp:ListItem Text="30"></asp:ListItem>
+                                                    <asp:ListItem Text="خوب"></asp:ListItem>
+                                                    <asp:ListItem Text="متوسط"></asp:ListItem>
+                                                    <asp:ListItem Text="ضعیف"></asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator InitialValue="-1" ID="Req_ID" Display="Dynamic"  ValidationGroup="g1" runat="server" ControlToValidate="Score1" Text="*" ErrorMessage="ErrorMessage">
                                                 </asp:RequiredFieldValidator>
@@ -112,26 +85,9 @@
                                             <div class="col-xs-2">
                                                 <asp:DropDownList runat="server" ID="Score2" CssClass="form-control">
                                                     <asp:ListItem Text="--" Value="-1"></asp:ListItem>
-                                                    <asp:ListItem Text="1"></asp:ListItem>
-                                                    <asp:ListItem Text="2"></asp:ListItem>
-                                                    <asp:ListItem Text="3"></asp:ListItem>
-                                                    <asp:ListItem Text="4"></asp:ListItem>
-                                                    <asp:ListItem Text="5"></asp:ListItem>
-                                                    <asp:ListItem Text="6"></asp:ListItem>
-                                                    <asp:ListItem Text="7"></asp:ListItem>
-                                                    <asp:ListItem Text="8"></asp:ListItem>
-                                                    <asp:ListItem Text="9"></asp:ListItem>
-                                                    <asp:ListItem Text="10"></asp:ListItem>
-                                                    <asp:ListItem Text="11"></asp:ListItem>
-                                                    <asp:ListItem Text="12"></asp:ListItem>
-                                                    <asp:ListItem Text="13"></asp:ListItem>
-                                                    <asp:ListItem Text="14"></asp:ListItem>
-                                                    <asp:ListItem Text="15"></asp:ListItem>
-                                                    <asp:ListItem Text="16"></asp:ListItem>
-                                                    <asp:ListItem Text="17"></asp:ListItem>
-                                                    <asp:ListItem Text="18"></asp:ListItem>
-                                                    <asp:ListItem Text="19"></asp:ListItem>
-                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                    <asp:ListItem Text="خوب"></asp:ListItem>
+                                                    <asp:ListItem Text="متوسط"></asp:ListItem>
+                                                    <asp:ListItem Text="ضعیف"></asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Score2" CssClass="text-danger" ErrorMessage="پر کردن معیار دوم اجباری است" />
                                             </div>
@@ -142,26 +98,9 @@
                                             <div class="col-xs-2">
                                                 <asp:DropDownList runat="server" ID="Score3" CssClass="form-control">
                                                     <asp:ListItem Text="--" Value="-1"></asp:ListItem>
-                                                    <asp:ListItem Text="1"></asp:ListItem>
-                                                    <asp:ListItem Text="2"></asp:ListItem>
-                                                    <asp:ListItem Text="3"></asp:ListItem>
-                                                    <asp:ListItem Text="4"></asp:ListItem>
-                                                    <asp:ListItem Text="5"></asp:ListItem>
-                                                    <asp:ListItem Text="6"></asp:ListItem>
-                                                    <asp:ListItem Text="7"></asp:ListItem>
-                                                    <asp:ListItem Text="8"></asp:ListItem>
-                                                    <asp:ListItem Text="9"></asp:ListItem>
-                                                    <asp:ListItem Text="10"></asp:ListItem>
-                                                    <asp:ListItem Text="11"></asp:ListItem>
-                                                    <asp:ListItem Text="12"></asp:ListItem>
-                                                    <asp:ListItem Text="13"></asp:ListItem>
-                                                    <asp:ListItem Text="14"></asp:ListItem>
-                                                    <asp:ListItem Text="15"></asp:ListItem>
-                                                    <asp:ListItem Text="16"></asp:ListItem>
-                                                    <asp:ListItem Text="17"></asp:ListItem>
-                                                    <asp:ListItem Text="18"></asp:ListItem>
-                                                    <asp:ListItem Text="19"></asp:ListItem>
-                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                    <asp:ListItem Text="خوب"></asp:ListItem>
+                                                    <asp:ListItem Text="متوسط"></asp:ListItem>
+                                                    <asp:ListItem Text="ضعیف"></asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Score3" CssClass="text-danger" ErrorMessage="پر کردن معیار سوم اجباری است" />
                                             </div>
@@ -172,26 +111,9 @@
                                             <div class="col-xs-2">
                                                 <asp:DropDownList runat="server" ID="Score4" CssClass="form-control">
                                                     <asp:ListItem Text="--" Value="-1"></asp:ListItem>
-                                                    <asp:ListItem Text="1"></asp:ListItem>
-                                                    <asp:ListItem Text="2"></asp:ListItem>
-                                                    <asp:ListItem Text="3"></asp:ListItem>
-                                                    <asp:ListItem Text="4"></asp:ListItem>
-                                                    <asp:ListItem Text="5"></asp:ListItem>
-                                                    <asp:ListItem Text="6"></asp:ListItem>
-                                                    <asp:ListItem Text="7"></asp:ListItem>
-                                                    <asp:ListItem Text="8"></asp:ListItem>
-                                                    <asp:ListItem Text="9"></asp:ListItem>
-                                                    <asp:ListItem Text="10"></asp:ListItem>
-                                                    <asp:ListItem Text="11"></asp:ListItem>
-                                                    <asp:ListItem Text="12"></asp:ListItem>
-                                                    <asp:ListItem Text="13"></asp:ListItem>
-                                                    <asp:ListItem Text="14"></asp:ListItem>
-                                                    <asp:ListItem Text="15"></asp:ListItem>
-                                                    <asp:ListItem Text="16"></asp:ListItem>
-                                                    <asp:ListItem Text="17"></asp:ListItem>
-                                                    <asp:ListItem Text="18"></asp:ListItem>
-                                                    <asp:ListItem Text="19"></asp:ListItem>
-                                                    <asp:ListItem Text="20"></asp:ListItem>
+                                                    <asp:ListItem Text="خوب"></asp:ListItem>
+                                                    <asp:ListItem Text="متوسط"></asp:ListItem>
+                                                    <asp:ListItem Text="ضعیف"></asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Score4" CssClass="text-danger" ErrorMessage="پر کردن معیار چهارم اجباری است" />
                                             </div>
@@ -202,28 +124,18 @@
                                             <div class="col-xs-2">
                                                 <asp:DropDownList runat="server" ID="Score5" CssClass="form-control">
                                                     <asp:ListItem Text="--" Value="-1"></asp:ListItem>
-                                                    <asp:ListItem Text="1"></asp:ListItem>
-                                                    <asp:ListItem Text="2"></asp:ListItem>
-                                                    <asp:ListItem Text="3"></asp:ListItem>
-                                                    <asp:ListItem Text="4"></asp:ListItem>
-                                                    <asp:ListItem Text="5"></asp:ListItem>
-                                                    <asp:ListItem Text="6"></asp:ListItem>
-                                                    <asp:ListItem Text="7"></asp:ListItem>
-                                                    <asp:ListItem Text="8"></asp:ListItem>
-                                                    <asp:ListItem Text="9"></asp:ListItem>
-                                                    <asp:ListItem Text="10"></asp:ListItem>
+                                                    <asp:ListItem Text="خوب"></asp:ListItem>
+                                                    <asp:ListItem Text="متوسط"></asp:ListItem>
+                                                    <asp:ListItem Text="ضعیف"></asp:ListItem>
                                                 </asp:DropDownList>
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Score4" CssClass="text-danger" ErrorMessage="پر کردن معیار چهارم اجباری است" />
                                             </div>
                                             <div class="_padding-top text-medium">آیا تصویری اولیه و حسی از شخصیت های فرعی اثرگذار به دست می آید؟</div>
                                         </div>
                                         <div class="form-group">
-                                            <asp:Label runat="server" AssociatedControlID="Opinion" CssClass="col-xs-2 control-label">مشروح نظر (حداقل 300 حرف)</asp:Label>
+                                            <asp:Label runat="server" AssociatedControlID="Opinion" CssClass="col-xs-2 control-label">مشروح نظر</asp:Label>
                                             <div class="col-md-10">
                                                 <asp:TextBox runat="server" ID="Opinion" CssClass="form-control" TextMode="MultiLine" Rows="5" />
-                                                <div class="col-md-1 pull-left">
-                                                    <asp:TextBox runat="server" ID="labelCo2" ReadOnly="true" Text="300"/>
-                                                </div>
                                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Opinion" CssClass="text-danger" ErrorMessage="پر کردن نظر اجباری است" />
                                             </div>
                                         </div>

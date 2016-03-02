@@ -46,16 +46,41 @@ namespace filmnameh.Script
                 IList<string> seg = Request.GetFriendlyUrlSegments();
                 if (seg.Count == 1)
                     ScriptGroupID = int.Parse(seg[0]);
+                if (ScriptGroupID != 0)
+                {
+                    var _script = Share.DB.ExecuteCommand("GetMyScript",
+                        new SqlParameter("UserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
+                        new SqlParameter("ScriptID", ScriptGroupID));
+                    if (_script.Any())
+                        GetMyScript = _script.First();
+
+                    ScriptTitle.Text = GetMyScript["Title"].ToString();
+                    Author.Text = GetMyScript["Author"].ToString();
+                    Provider.Text = GetMyScript["Provider"].ToString();
+                    ScriptGenre.Text = GetMyScript["Genre"].ToString();
+                    ScriptForm.Text = GetMyScript["Form"].ToString();
+                    ScriptSubject.Text = GetMyScript["Subject"].ToString();
+                    ScriptSide1.Text = GetMyScript["Side1"].ToString();
+                    ScriptSide2.Text = GetMyScript["Side2"].ToString();
+                    ScriptSummary.Text = GetMyScript["Summary"].ToString();
+                    ScriptText.Text = GetMyScript["Text"].ToString();
+                    SuggestedEpisodeNo.Text = GetMyScript["SuggestedEpisodeNo"].ToString();
+                    SuggestedEpisodeDur.Text = GetMyScript["SuggestedEpisodeDur"].ToString();
+                }
             //}
         }
 
         protected void ScriptRegisterClick(object sender, EventArgs e)
         {
-
             var ScriptID = Share.DB.ExecuteCommand("GetScriptID");
             GetScriptID = ScriptID.First();
-            var oyear = GetScriptID["ID"].ToString().Substring(0, 2);
+
             var nyear = ConvertDate(DateTime.Now.ToString()).ToString().Substring(2, 2);
+            var oyear = "00000";
+            if (GetScriptID["ID"].ToString().Length > 0)
+            {
+                oyear = GetScriptID["ID"].ToString().Substring(0, 2);
+            }
             int newID;
             if (oyear == nyear)
             {

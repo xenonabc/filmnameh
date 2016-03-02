@@ -59,7 +59,7 @@
                                                     <td>
                                                         <asp:PlaceHolder runat="server" visible='<%# Item["Council"].ToString() == "0" %>'>
                                                             <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() != "0" %>'>
-                                                            <%# Item["FinalState"] %>
+                                                                <a data-toggle="tooltip" href="#" title="<%# Item["FinalOpinion"] %>"><%# Item["FinalState"] %></a>
                                                             </asp:PlaceHolder>
                                                             <asp:PlaceHolder runat="server" visible='<%# Item["FinalState"].ToString() == "0" %>'>
                                                             ارسال شده

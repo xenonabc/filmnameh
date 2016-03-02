@@ -19,6 +19,8 @@
                                         <dl class="dl-horizontal">
                                             <dt>شناسه</dt>
                                             <dd><%: GetScript["ScriptID"]%></dd>
+                                            <dt>نوع</dt>
+                                            <dd><%: GetScript["tType"]%></dd>
                                             <dt>عنوان</dt>
                                             <dd><%: GetScript["Title"]%></dd>
                                             <dt>نویسنده</dt>
@@ -32,10 +34,12 @@
                                             <dt>قالب</dt>
                                             <dd><%: GetScript["Form"]%></dd>
                                             <dt>موضوع</dt>
-                                            <dd><%: GetScript["Subject"]%> / <%: GetScript["Side1"]%> / <%: GetScript["Side2"]%></dd>
+                                            <dd><%: GetScript["Subject"]%> / <%: GetScript["Side1"]%></dd>
+                                            <dt>پیام(در یک جمله)</dt>
+                                            <dd><%: GetScript["Side2"]%></dd>
                                             <dt>خلاصه</dt>
                                             <dd><%: GetScript["Summary"]%></dd>
-                                            <dt>آخرین طرح</dt>
+                                            <dt><%: GetScript["tType"]%></dt>
                                             <dd><%: GetScript["Text"]%></dd>
                                             <dt>پیوست ها</dt>
                                             <dd><asp:ListView runat="server" id="upload_list" ItemType="System.String">

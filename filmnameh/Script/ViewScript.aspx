@@ -1,4 +1,4 @@
-﻿<%@ Page Title="مشاهده جزئیات فیلم نامه" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewScript.aspx.cs" Inherits="filmnameh.Script.ViewScript" %>
+﻿<%@ Page Title="مشاهده جزئیات" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewScript.aspx.cs" Inherits="filmnameh.Script.ViewScript" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section id="main">
@@ -8,7 +8,7 @@
                     <div class="col-xs-12">
                         <div class="main-container _margin-bottom">
                             <div class="content">
-                                <h2>مدیریت فیلم‌نامه‌ها</h2>
+                                <h2>مشاهده جزئیات</h2>
                                 <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
                                     <p class="text-success"><%: SuccessMessage %></p>
                                 </asp:PlaceHolder>
@@ -18,6 +18,8 @@
                                         <dl class="dl-horizontal">
                                             <dt>شناسه</dt>
                                             <dd><%: GetMyScript["ScriptID"]%></dd>
+                                            <dt>نوع</dt>
+                                            <dd><%: GetMyScript["tType"]%></dd>
                                             <dt>عنوان</dt>
                                             <dd><%: GetMyScript["Title"]%></dd>
                                              <dt>نویسنده</dt>
@@ -31,10 +33,12 @@
                                             <dt>قالب</dt>
                                             <dd><%: GetMyScript["Form"]%></dd>
                                             <dt>موضوع</dt>
-                                            <dd><%: GetMyScript["Subject"]%> / <%: GetMyScript["Side1"]%> / <%: GetMyScript["Side2"]%></dd>
+                                            <dd><%: GetMyScript["Subject"]%> / <%: GetMyScript["Side1"]%></dd>
+                                            <dt>پیام(در یک جمله)</dt>
+                                            <dd><%: GetMyScript["Side2"]%></dd>
                                             <dt>خلاصه</dt>
                                             <dd><%: GetMyScript["Summary"]%></dd>
-                                            <dt>آخرین طرح</dt>
+                                            <dt><%: GetMyScript["tType"]%></dt>
                                             <dd><%: GetMyScript["Text"]%></dd>
                                             <dt>پیوست ها</dt>
                                             <dd><asp:ListView runat="server" id="upload_list" ItemType="System.String">

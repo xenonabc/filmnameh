@@ -20,7 +20,7 @@
                                     <section id="externalLoginsForm">
                                         <asp:ListView runat="server" ID="UsersList" ItemType="System.Collections.Generic.Dictionary`2[System.String,System.Object]">
                                             <LayoutTemplate>
-                                                <h4>لیست کاربران</h4>
+                                                <h4></h4>
                                                 <table class="table table-bordered table-hover table-striped">
                                                     <thead>
                                                         <tr>

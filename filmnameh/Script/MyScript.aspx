@@ -18,6 +18,8 @@
                                         <dl class="dl-horizontal">
                                             <dt>شناسه</dt>
                                             <dd><%: GetMyScript["ScriptID"]%></dd>
+                                            <dt>نوع</dt>
+                                            <dd><%: GetMyScript["tType"]%></dd>
                                             <dt>عنوان</dt>
                                             <dd><%: GetMyScript["Title"]%></dd>
                                             <dt>زمان ایجاد</dt>
@@ -27,9 +29,13 @@
                                             <dt>قالب</dt>
                                             <dd><%: GetMyScript["Form"]%></dd>
                                             <dt>موضوع</dt>
-                                            <dd><%: GetMyScript["Subject"]%> / <%: GetMyScript["Side1"]%> / <%: GetMyScript["Side2"]%></dd>
+                                            <dd><%: GetMyScript["Subject"]%> / <%: GetMyScript["Side1"]%></dd>
+                                            <dt>پیام(در یک جمله)</dt>
+                                            <dd><%: GetMyScript["Side2"]%></dd>
                                             <dt>خلاصه</dt>
                                             <dd><%: GetMyScript["Summary"]%></dd>
+                                            <dt><%: GetMyScript["tType"]%></dt>
+                                            <dd><%: GetMyScript["Text"]%></dd>
                                             <dt>پیوست ها</dt>
                                             <dd><asp:ListView runat="server" id="upload_list" ItemType="System.String">
                                                  <ItemTemplate>
@@ -39,14 +45,12 @@
                                             <dt>آخرین وضعیت</dt>
                                             <dd>
                                                 <asp:PlaceHolder runat="server" visible='<%# GetMyScript["FinalState"].ToString() != "0" %>'>
-                                                    <%# GetMyScript["FinalState"] %>
+                                                    <%: GetMyScript["FinalState"] %>
                                                 </asp:PlaceHolder>
                                                 <asp:PlaceHolder runat="server" visible='<%# GetMyScript["FinalState"].ToString() == "0" %>'>
                                                     در حال بررسی
                                                 </asp:PlaceHolder>
                                             </dd>
-                                            <dt>آخرین طرح</dt>
-                                            <dd><%: GetMyScript["Text"]%></dd>
                                         </dl>
                                         <% } else { %>
                                         <p class="text-danger">صفحه ای بازگردانیده نشد</p>

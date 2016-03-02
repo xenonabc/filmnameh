@@ -19,7 +19,7 @@
                                             <dt>شناسه</dt>
                                             <dd><%: GetScript.First()["ScriptID"]%></dd>
                                             <dt>نوع</dt>
-                                            <dd><%: ddd %></dd>
+                                            <dd><%: GetScript.First()["tType"]%></dd>
                                             <dt>عنوان</dt>
                                             <dd><%: GetScript.First()["Title"]%></dd>
                                             <dt>نویسنده</dt>
@@ -33,7 +33,9 @@
                                             <dt>قالب</dt>
                                             <dd><%: GetScript.First()["Form"]%></dd>
                                             <dt>موضوع</dt>
-                                            <dd><%: GetScript.First()["Subject"]%> / <%: GetScript.First()["Side1"]%> / <%: GetScript.First()["Side2"]%></dd>
+                                            <dd><%: GetScript.First()["Subject"]%> / <%: GetScript.First()["Side1"]%></dd>
+                                            <dt>پیام(در یک جمله)</dt>
+                                            <dd><%: GetScript.First()["Side2"]%></dd>
                                             <dt>خلاصه</dt>
                                             <dd><%: GetScript.First()["Summary"]%></dd>
                                             <dt>آخرین طرح</dt>
@@ -122,7 +124,7 @@
                                                 <dt>شناسه</dt>
                                                 <dd><%: GetScript2.First()["ScriptID"]%></dd>
                                                 <dt>نوع</dt>
-                                                <dd><%: ddd %></dd>
+                                                <dd><%: GetScript.First()["tType"]%></dd>
                                                 <dt>عنوان</dt>
                                                 <dd><%: GetScript2.First()["Title"]%></dd>
                                                 <dt>نویسنده</dt>

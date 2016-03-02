@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="form-group">
                                         <asp:Label runat="server" AssociatedControlID="" CssClass="col-md-2 control-label">آپلود طرح</asp:Label>
-                                        <div id="divFileUploader" class="col-md-10">
+                                        <div id="divFileUploader" class="col-md-3">
 	                                        <div class="fup-uploader">
 		                                        <div class="fup-upload-drop-area" style="display: none;">
 			                                        <span>Drop files here to upload</span>
@@ -126,6 +126,9 @@
 		                                        </div>
 		                                        
 	                                        </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            لازم است کاربران آزاد حتما فایل صوتی خود را ارسال نمایند
                                         </div>
                                         <asp:TextBox runat="server" id='txtFiles' type='hidden' />
                                         <input id='txtFailed' type='hidden' />

@@ -12,7 +12,6 @@ namespace filmnameh.Script
 {
     public partial class FinalScr : System.Web.UI.Page
     {
-        public string ddd = "";
         protected string SuccessMessage
         {
             get;
@@ -62,11 +61,6 @@ namespace filmnameh.Script
 
                     FinalOpinion.Text = GetScript.First()["FinalOpinion"].ToString();
                     FinalState.Text = GetScript.First()["FinalState"].ToString();
-
-                    string dd = GetScript.First()["Type"].ToString();
-                    if (dd == "1") ddd = "فیلم نامه";
-                    if (dd == "2") ddd = "طرح";
-                    if (dd == "3") ddd = "سیناپس";
                 }else{
                     var __script = Share.DB.ExecuteCommand("GetScript",
                     new SqlParameter("ScriptID", ScriptID));
@@ -78,11 +72,6 @@ namespace filmnameh.Script
                     
                     FinalOpinion2.Text = GetScript2.First()["FinalOpinion"].ToString();
                     FinalState2.Text = GetScript2.First()["FinalState"].ToString();
-
-                    string dd = GetScript2.First()["Type"].ToString();
-                    if (dd == "1") ddd = "فیلم نامه";
-                    if (dd == "2") ddd = "طرح";
-                    if (dd == "3") ddd = "سیناپس";
                 }
                 
                 

@@ -12,7 +12,6 @@ namespace filmnameh.Script
 {
     public partial class FinalScript : System.Web.UI.Page
     {
-        public string ddd = "";
         protected string SuccessMessage
         {
             get;
@@ -61,11 +60,6 @@ namespace filmnameh.Script
                     FinalOpinion.Text = GetScript.First()["FinalOpinion"].ToString();
                     FinalState.Text = GetScript.First()["FinalState"].ToString();
                 }
-                
-                string dd = GetScript.First()["Type"].ToString();
-                if(dd == "1") ddd = "فیلم نامه";
-                if(dd == "2") ddd = "طرح";
-                if (dd == "3") ddd = "سیناپس";
 
             }
         }

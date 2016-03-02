@@ -18,6 +18,8 @@
                                         <dl class="dl-horizontal">
                                             <dt>شناسه</dt>
                                             <dd><%: GetScript.First()["ScriptID"]%></dd>
+                                            <dt>نوع</dt>
+                                            <dd><%: GetScript.First()["tType"]%></dd>
                                             <dt>عنوان</dt>
                                             <dd><%: GetScript.First()["Title"]%></dd>
                                             <dt>نویسنده</dt>
@@ -31,11 +33,17 @@
                                             <dt>قالب</dt>
                                             <dd><%: GetScript.First()["Form"]%></dd>
                                             <dt>موضوع</dt>
-                                            <dd><%: GetScript.First()["Subject"]%> / <%: GetScript.First()["Side1"]%> / <%: GetScript.First()["Side2"]%></dd>
+                                            <dd><%: GetScript.First()["Subject"]%> / <%: GetScript.First()["Side1"]%></dd>
+                                            <dt>پیام(در یک جمله)</dt>
+                                            <dd><%: GetScript.First()["Side2"]%></dd>
                                             <dt>خلاصه</dt>
                                             <dd><%: GetScript.First()["Summary"]%></dd>
-                                            <dt>آخرین طرح</dt>
+                                            <dt><%: GetScript.First()["tType"]%></dt>
                                             <dd><%: GetScript.First()["Text"]%></dd>
+                                            <dt>تعداد</dt>
+                                            <dd><%: GetScript.First()["SuggestedEpisodeNo"]%></dd>
+                                            <dt>مدت</dt>
+                                            <dd><%: GetScript.First()["SuggestedEpisodeDur"]%></dd>
                                             <dt>پیوست ها</dt>
                                             <dd><asp:ListView runat="server" id="upload_list" ItemType="System.String">
                                                  <ItemTemplate>
@@ -43,7 +51,7 @@
                                                  </ItemTemplate>
                                             </asp:ListView></dd>
                                             <dt>مرتبط است به</dt>
-                                            <dd><%: GetScript.First()["ScriptGroup"]%></dd>
+                                            <dd><a href="/Script/FinalScr/<%: GetScript.First()["ScriptGroup"]%>"><%: GetScript.First()["ScriptGroup"]%></a></dd>
                                         </dl>
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">تخصیص به کارشناسان</a></li>

@@ -52,7 +52,8 @@ namespace filmnameh.Script
                 new SqlParameter("CodeMelli", CodeMelli.Text),
                 new SqlParameter("Tel", Telephone.Text),
                 new SqlParameter("Address", Address.Text),
-                new SqlParameter("History", History.Text)); 
+                new SqlParameter("History", History.Text),
+                new SqlParameter("Active", 1)); 
             if (login == null)
             {
                 ErrorMessage.Text = "خطایی رخ داده است";

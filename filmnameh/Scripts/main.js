@@ -31,4 +31,7 @@
         $("#MainContent_txtFiles").val(files);
         }
     });
+
+    $('[data-toggle="tooltip"]').tooltip();
+
 });

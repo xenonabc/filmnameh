@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Captcha\Default.aspx" />
     <Content Include="Definitions.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -305,6 +306,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Captcha\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Captcha\RandomImage.cs" />
     <Compile Include="Definitions.aspx.cs">
       <DependentUpon>Definitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

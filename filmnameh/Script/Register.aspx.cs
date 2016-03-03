@@ -75,6 +75,11 @@ namespace filmnameh.Script
 
         protected void ScriptRegisterClick(object sender, EventArgs e)
         {
+            if(txtCaptcha.Text.ToLower() != Session["CaptchaImageText"].ToString().ToLower())
+            {
+                ErrorMessage.Text = "کد امنیتی اشتباه وارد شده است";
+                return;
+            }
             var editFlag = false;
             IList<string> seg = Request.GetFriendlyUrlSegments();
             var ScriptIDE = 0;

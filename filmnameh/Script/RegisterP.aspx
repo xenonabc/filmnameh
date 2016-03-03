@@ -155,6 +155,13 @@
                                         <div class="pull-right _padding-top">دقیقه</div>
                                     </div>
                                     <div class="form-group">
+                                        <asp:Label runat="server" AssociatedControlID="txtCaptcha" CssClass="col-md-2 control-label">کد امنیتی</asp:Label>
+                                        <div class="col-md-2">
+                                            <img src="/captcha/?.jpg" ID="CaptchaImage"/><input type="button" value="تغییر" CssClass="btn" ID="ChangeCaptcha"/>
+                                            <asp:TextBox runat="server" ID="txtCaptcha" CssClass="form-control" />   
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="center-block text-center">
                                             <asp:Button runat="server" OnClick="ScriptRegisterClick" Text="ذخیره" CssClass="btn btn-success" ID="RegisterButton"/>
                                         </div>

@@ -34,4 +34,10 @@
 
     $('[data-toggle="tooltip"]').tooltip();
 
+    $("#ChangeCaptcha").on('click', function (e) {
+        e.preventDefault();
+        var newSrc = "/captcha/??.jpg"+new Date().getTime();
+        $("#CaptchaImage").attr('src', newSrc);
+        //$("#CaptchaImage").load();
+    });
 });

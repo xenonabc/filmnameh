@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using Microsoft.AspNet.FriendlyUrls;
+using System.Data.SqlClient;
 
 namespace filmnameh
 {

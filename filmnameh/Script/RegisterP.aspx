@@ -10,7 +10,7 @@
                             <div class="content">
                                 <h2><%: Title %></h2>
                                 <p class="text-danger">
-                                    <asp:Literal runat="server" ID="ErrorMessage" />
+                                    <asp:Literal runat="server" ID="ErrorMessage"/>
                                 </p>
                                 <div class="row">
                                 <div class="form-horizontal col-md-8">

@@ -35,7 +35,6 @@ namespace filmnameh.Script
             successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
             /******************* PAGINATION *******************/
             var pageSize = 3;
-            
             var count = 0;
             var page = 1;
             IList<string> seg = Request.GetFriendlyUrlSegments();

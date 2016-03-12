@@ -32,9 +32,6 @@ namespace filmnameh.Script
         {
             if (Session[Share.Share.Sessions.user.ToString()] == null)
                 Response.Redirect("~/Account/Login");
-            //SuccessMessage = String.Empty;
-            //successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
-            
 
             if (!Page.IsPostBack)
             {

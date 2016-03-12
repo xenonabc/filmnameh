@@ -8,7 +8,7 @@
                     <div class="col-xs-12">
                         <div class="main-container _margin-bottom">
                             <div class="content">
-                                <h2>مشاهده کاربران</h2>
+                                <h2>مشاهده کاربران</h2> <%#: totalP["num"].ToString() %>
                                 <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
                                     <p class="text-success"><%: SuccessMessage %></p>
                                 </asp:PlaceHolder>
@@ -45,6 +45,13 @@
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:ListView>
+                                        <div class="pagination" style="margin: 0 auto">
+                                         <% 
+                                                for (var i = 1; i <= totalPages; i++){
+                                                     %><li><a href="/Script/Users/<%: i %>"><%: i %></a></li><%
+                                                }   
+                                            %>
+                                        </div>
                                     </section>
                                 </div>
                             </div>

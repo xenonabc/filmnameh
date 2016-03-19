@@ -5,17 +5,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.FriendlyUrls;
+using System.Web.Configuration;
 
 namespace filmnameh.Script
 {
     public partial class Final : System.Web.UI.Page
     {
+        public int totalPages = 0;
         protected string SuccessMessage
         {
             get;
             private set;
         }
         protected bool CanRemoveExternalLogins
+        {
+            get;
+            private set;
+        }
+        protected Dictionary<string, object> totalP
         {
             get;
             private set;
@@ -27,13 +35,23 @@ namespace filmnameh.Script
             SuccessMessage = String.Empty;
             successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
 
-            MyscriptsList.DataSource = GetMyScripts();
+            /******************* <PAGINATION>  *******************/
+            var pageSize = int.Parse(WebConfigurationManager.AppSettings["RowNumber"].ToString());
+            var count = 0;
+            var page = 1;
+            IList<string> seg = Request.GetFriendlyUrlSegments();
+            if (seg.Count == 1)
+                page = int.Parse(seg[0]);
+            var offset = (page - 1) * pageSize;
+            var TP = Share.DB.ExecuteCommand("GetTotalRowsNum", new SqlParameter("TableName", "Scripts"), new SqlParameter("WhereClause", " WHERE Scripts.FinalState != '0'"));
+            totalP = TP.First();
+            count = int.Parse(totalP["num"].ToString());
+            totalPages = (int)Math.Ceiling((double)count / pageSize);
+            /******************* </PAGINATION> *******************/
+
+            var GetMyScripts = Share.DB.ExecuteCommand("GetFinal", new SqlParameter("offset", offset), new SqlParameter("pageSize", pageSize));
+            MyscriptsList.DataSource = GetMyScripts;
             MyscriptsList.DataBind();
-        }
-        public IEnumerable<Dictionary<string, object>> GetMyScripts()
-        {
-            var checkScripts = Share.DB.ExecuteCommand("GetFinal");
-            return checkScripts;
         }
     }
 }

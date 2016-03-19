@@ -43,6 +43,13 @@
                                                 </tr>
                                             </ItemTemplate>
                                         </asp:ListView>
+                                        <div class="pagination" style="margin: 0 auto">
+                                         <% 
+                                                for (var i = 1; i <= totalPages; i++){
+                                                     %><li><a href="/Script/Contacts/<%: i %>"><%: i %></a></li><%
+                                                }   
+                                            %>
+                                        </div>
                                     </section>
                                 </div>
                             </div>

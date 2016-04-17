@@ -176,6 +176,7 @@
     <Content Include="Script\LinkedRegisterS.aspx" />
     <Content Include="Script\MyPlans.aspx" />
     <Content Include="Script\MySynapsis.aspx" />
+    <Content Include="Script\Reports.aspx" />
     <Content Include="Script\RegisterP.aspx" />
     <Content Include="Script\RegisterS.aspx" />
     <Content Include="Script\RegisterUser.aspx" />
@@ -445,6 +446,13 @@
     </Compile>
     <Compile Include="Script\MySynapsis.aspx.designer.cs">
       <DependentUpon>MySynapsis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Script\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Script\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Script\RegisterP.aspx.cs">
       <DependentUpon>RegisterP.aspx</DependentUpon>

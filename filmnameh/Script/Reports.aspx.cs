@@ -27,63 +27,33 @@ namespace filmnameh.Script
         {
             if (Session[Share.Share.Sessions.user.ToString()] == null)
                 Response.Redirect("~/Account/Login");
-        }
-
-        protected void ScriptRegisterClick(object sender, EventArgs e)
-        {
             IList<string> seg = Request.GetFriendlyUrlSegments();
-            var ScriptIDE = 0;
+            var par = "";
             if (seg.Count == 1)
             {
-                ScriptIDE = int.Parse(seg[0]);
-            }
-
-            var ScriptID = Share.DB.ExecuteCommand("GetScriptID");
-            GetScriptID = ScriptID.First();
-
-            var nyear = ConvertDate(DateTime.Now.ToString()).ToString().Substring(2, 2);
-            var oyear = "00000";
-            if (GetScriptID["ID"].ToString().Length > 0)
-            {
-                oyear = GetScriptID["ID"].ToString().Substring(0, 2);
-            }
-            int newID;
-            if (oyear == nyear)
-            {
-                newID = int.Parse(GetScriptID["ID"].ToString()) + 1;
-            }
-            else
-            {
-                newID = int.Parse(nyear + "00001");
-            }
-
-            var login = Share.DB.ExecuteCommand("ScriptRegisterClick",
-                new SqlParameter("CreateUserID", int.Parse(((Dictionary<string, object>)Session[Share.Share.Sessions.user.ToString()])["UserID"].ToString())),
-                new SqlParameter("Title", ScriptTitle.Text),
-                new SqlParameter("Author", Author.Text),
-                new SqlParameter("Provider", Provider.Text),
-                new SqlParameter("Genre", ScriptGenre.SelectedItem.Text),
-                new SqlParameter("Form", ScriptForm.SelectedItem.Text),
-                new SqlParameter("Subject", ScriptSubject.SelectedItem.Text),
-                new SqlParameter("Side1", ScriptSide1.Text),
-                new SqlParameter("Side2", ScriptSide2.Text),
-                new SqlParameter("Summary", ScriptSummary.Text),
-                new SqlParameter("Text", ScriptText.Text),
-                new SqlParameter("SuggestedEpisodeNo", int.Parse(SuggestedEpisodeNo.Text)),
-                new SqlParameter("SuggestedEpisodeDur", int.Parse(SuggestedEpisodeDur.Text)),
-                new SqlParameter("ID", newID.ToString()),
-                new SqlParameter("Attachments", txtFiles.Text),
-                new SqlParameter("Type", 1)); 
-
-            if (login == null)
-            {
-                ErrorMessage.Text = "خطایی رخ داده است";
-            }
-            else
-            {
-                Response.Redirect("~/Script/MyScripts");
+                par = seg[0];
             }
             
+            string[] dates = par.Split('_');
+
+            if (!Page.IsPostBack)
+            {
+                if (par != "")
+                {
+                    FromDate.Text = dates[0];
+                    ToDate.Text = dates[1];
+                    var aaa = ConvertJalDate2Ger(dates[0]);
+                    var GetReport = Share.DB.ExecuteCommand("GetReport", new SqlParameter("FromDate", ConvertJalDate2Ger(dates[0])), new SqlParameter("ToDate", ConvertJalDate2Ger(dates[1])));
+                    ReportList.DataSource = GetReport;
+                    ReportList.DataBind();
+                }
+                
+            }
+        }
+
+        protected void DoReportButtonClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Script/Reports/" + FromDate.Text + "_" + ToDate.Text);
         }
         protected string ConvertDate(string strGerDate)
         {
@@ -91,7 +61,20 @@ namespace filmnameh.Script
             if (strGerDate != "")
             {
                 var gerdate = Convert.ToDateTime(strGerDate);
-                return (pc.GetYear(gerdate).ToString());
+                return (pc.GetYear(gerdate).ToString() + "/" + pc.GetMonth(gerdate).ToString() + "/" + pc.GetDayOfMonth(gerdate).ToString());
+            }
+            else
+            {
+                return ("");
+            }
+        }
+        protected string ConvertJalDate2Ger(string strJalDate)
+        {
+            PersianCalendar pc = new PersianCalendar();
+            if (strJalDate != "")
+            {
+                var Jaldate = Convert.ToDateTime(strJalDate);
+                return (pc.ToDateTime(Jaldate.Year, Jaldate.Month, Jaldate.Day, 0, 0, 0, 0 ).ToString());
             }
             else
             {

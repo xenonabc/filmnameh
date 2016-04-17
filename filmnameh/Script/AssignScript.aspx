@@ -79,8 +79,8 @@
                                                     <div class="col-md-8">
                                                         <asp:DropDownList runat="server" ID="FinalState" CssClass="form-control">
                                                             <asp:ListItem Text="--"></asp:ListItem>
-                                                            <%--<asp:ListItem Text="بررسی مجدد"></asp:ListItem>
-                                                            <asp:ListItem Text="مشروط"></asp:ListItem>
+                                                            <asp:ListItem Text="بررسی مجدد"></asp:ListItem>
+                                                            <%--<asp:ListItem Text="مشروط"></asp:ListItem>
                                                             <asp:ListItem Text="مسکوت"></asp:ListItem>--%>
                                                             <asp:ListItem Text="تصویب"></asp:ListItem>
                                                             <asp:ListItem Text="مردود"></asp:ListItem>

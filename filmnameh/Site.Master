@@ -58,6 +58,7 @@
                                                     <li><a runat="server" href="~/Script/Experts">‌کارشناسان</a></li>
                                                     <li><a runat="server" href="~/Script/Contacts">تماس ها</a></li>
                                                     <li><a runat="server" href="~/Script/Users">‌کاربران</a></li>
+                                                    <li><a runat="server" href="~/Script/Reports">‌گزارش گیری</a></li>
                                                     <% break; %>
                                                     <% } %>
                                                     <% } %>
